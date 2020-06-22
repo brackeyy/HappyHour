@@ -3,6 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+#search
+gem 'pg_search', '~> 2.3.0'
+#map
+gem 'geocoder'
+#authorization
+gem 'pundit'
+# devise
+gem 'devise'
+# cloudinary setup
+gem 'cloudinary', '~> 1.12.0'
+# secure cloudinary token
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgresql as the database for Active Record
