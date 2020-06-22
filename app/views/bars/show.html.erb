@@ -1,0 +1,13 @@
+
+<div class="container">
+  <div class="card">
+      <h2><%= @bar.name %></h2>
+      <br>
+      <p><%= @bar.description %></p>
+      <br>
+      <p><%= @bar.location %></p>
+      <img src="">
+    <h2 class="card"><%= @bar.user.email %></h2>
+  </div>
+  <%= link_to 'Delete', bar_path(@bar), method: :delete %>
+</div>
