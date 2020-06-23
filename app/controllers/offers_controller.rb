@@ -24,30 +24,33 @@ def create
   authorize @offer
 
   if @offer.save!
-    redirect_to bar_offer_path(@bar, @offer)
+    #redirect_to offer_path(@offer)
+    redirect_to @offer
   else
     render :new
   end
 end
 
 def edit
-  @bar.user = current_user
-  @offer.bar = @bar
+
   @offer = Offer.find(params[:id])
+
   authorize @offer
+  # /bars/:bar_id/offers/:id/edit
 end
 
 def update
 
   @offer = Offer.find(params[:id])
-  authorize @Offer
-  @offer.description = params[:description]
-  @offer.start_time = params[:start_time]
-  @offer.duration = params[:duration]
-
+  authorize @offer
+  # @offer.description = params[:offer][:description]
+  # @offer.start_time = params[:offer][:start_time]
+  # @offer.duration = params[:offer][:duration]
+  # @offer.expired = params[:offer][:expired]
+  @offer.update(offer_params)
 
   @offer.save
-  redirect_to "/"
+  redirect_to @offer
 
 
 end
@@ -56,12 +59,13 @@ def destroy
   @offer = Offer.find(params[:id])
   @offer.delete
   authorize @offer
+  redirect_to offers_path
 end
 
 private
 
 def offer_params
-  params.require(:offer).permit(:description, :start_time, :duration)
+  params.require(:offer).permit(:description, :start_time, :duration, :expired)
 end
 
 end

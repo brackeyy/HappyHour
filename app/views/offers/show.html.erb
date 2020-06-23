@@ -6,8 +6,10 @@
       <p><%= @offer.bar.name %></p>
       <br>
       <p><%= @offer.start_time %></p>
+      <p><%= @offer.expired %></p>
+
   </div>
-  <%= link_to 'Delete', bar_offers_path, method: :delete %>
+  <%= link_to 'Delete', offer_path(@offer), method: :delete %>
 </div>
 
 
