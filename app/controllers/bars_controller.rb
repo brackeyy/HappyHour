@@ -2,16 +2,7 @@ class BarsController < ApplicationController
 
 before_action :find_bar, only: [:show, :edit, :update, :destroy]
 
-def index
-  @bars = Bar.geocoded # returns flats with coordinates
-
-  @markers = @bars.map do |bar|
-    {
-      lat: flat.latitude,
-      lng: flat.longitude
-    }
-  end
-end
+  # @bars = Bar.geocoded # returns bars with coordinates
 
 def show
   @bar = Bar.find(params[:id])
@@ -20,17 +11,18 @@ def show
       lat: @bar.latitude,
       lng: @bar.longitude
     }]
+   authorize @bar
 end
-
 
   def new
     @bar = Bar.new
+    authorize @bar
   end
 
 def create
     @bar = Bar.new(bar_params)
     @bar.user = current_user
-    # authorize @bar
+    authorize @bar
       if @bar.save!
         redirect_to bar_path(@bar)
       else
@@ -39,9 +31,7 @@ def create
   end
 
 def edit
-
-
-  # authorize @booking
+  authorize @bar
 end
 
 def update
@@ -59,6 +49,7 @@ def destroy
 
   @bar.destroy
   redirect_to root_path, notice: 'Bar was successfully destroyed.'
+  authorize @bar
 end
 
 
