@@ -13,9 +13,4 @@ class BookingPolicy < ApplicationPolicy
     user
   end
 
-  # might not be necessary if offer expires automatically after i.e. 1h
-  def update?
-    record.offer.user == user
-  end
-
 end
