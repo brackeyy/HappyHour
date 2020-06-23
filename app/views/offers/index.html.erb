@@ -1,0 +1,27 @@
+<div class="container">
+<h1 class="title-offers">All the available offers</h1>
+  <div class="grid-container">
+    <%@offers.each do |offer|%>
+      <%=link_to offer_path(offer), class: "card-link" do %>
+        <div class="card-trip">
+          <%# if flat.photos.attached? %>
+            <%#= cl_image_tag flat.photos.first.key, width: 150, height: 150, gravity: :face %>
+          <%# else %>
+            <%#= image_tag "https://imagizer.imageshack.com/img922/2089/6PYv26.png", opacity: 0.9, crop: :thumb %>
+          <%# end %>
+          <div class="card-content">
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= offer.bar.name %></h2>
+                <div class="city-info">
+                  <i class="fas fa-bar"></i>   <p><%=offer.description%></p>
+                </div>
+              </div>
+              <h2 class="card-trip-pricing"><%= offer.duration%> €</h2>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+</div>
