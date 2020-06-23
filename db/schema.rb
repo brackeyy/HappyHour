@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_145836) do
+ActiveRecord::Schema.define(version: 2020_06_23_092710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,26 @@ ActiveRecord::Schema.define(version: 2020_06_22_145836) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_bars_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.boolean "expired"
+    t.bigint "user_id", null: false
+    t.bigint "offer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["offer_id"], name: "index_bookings_on_offer_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.text "description"
+    t.datetime "start_time"
+    t.integer "duration"
+    t.bigint "bar_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bar_id"], name: "index_offers_on_bar_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +58,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_145836) do
   end
 
   add_foreign_key "bars", "users"
+  add_foreign_key "bookings", "offers"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "offers", "bars"
 end
