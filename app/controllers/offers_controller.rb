@@ -1,8 +1,13 @@
 class OffersController < ApplicationController
 
  def index
-
+  if params[:query].present?
+      sql_query = " \
+        offers.bar.location @@ :query \
+      "
+      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
   @offers = policy_scope(Offer)
+end
 end
 
 def show
