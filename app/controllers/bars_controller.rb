@@ -2,26 +2,21 @@ class BarsController < ApplicationController
 
 before_action :find_bar, only: [:show, :edit, :update, :destroy]
 
-def show
+ def show
 
-    # authorize @booking
-    # @markers =
-    #   [{
-    #     lat: @flat.latitude,
-    #     lng: @flat.longitude
-    #   }]
-    #   authorize @flat
-end
+    authorize @bar
+  end
 
 
   def new
     @bar = Bar.new
+    authorize @bar
   end
 
 def create
     @bar = Bar.new(bar_params)
     @bar.user = current_user
-    # authorize @bar
+    authorize @bar
       if @bar.save!
         redirect_to bar_path(@bar)
       else
@@ -30,9 +25,7 @@ def create
   end
 
 def edit
-
-
-  # authorize @booking
+  authorize @bar
 end
 
 def update
@@ -50,6 +43,7 @@ def destroy
 
   @bar.destroy
   redirect_to root_path, notice: 'Bar was successfully destroyed.'
+  authorize @bar
 end
 
 
