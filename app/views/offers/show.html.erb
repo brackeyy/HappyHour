@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="card">
+      <h2><%= @offer.description %></h2>
+      <br>
+      <p><%= @offer.bar.name %></p>
+      <br>
+      <p><%= @offer.start_time %></p>
+  </div>
+  <%= link_to 'Delete', bar_offers_path, method: :delete %>
+</div>
+
+
+
+
+<!--
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>"></div>
+     <br>
+<div>
+<%#= link_to "Back", bars_path, class: "btn button-primary"%>
+</div>
+ -->
