@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_06_23_092710) do
   create_table "offers", force: :cascade do |t|
     t.text "description"
     t.datetime "start_time"
-    t.integer "duration"
+    t.time "duration"
     t.bigint "bar_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
