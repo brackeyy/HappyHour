@@ -10,4 +10,6 @@
     <h2 class="card"><%= @bar.user.email %></h2>
   </div>
   <%= link_to 'Delete', bar_path(@bar), method: :delete %>
+  <%= link_to "Add an offer", new_bar_offer_path(@bar) %>
+
 </div>

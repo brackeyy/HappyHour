@@ -1,3 +1,50 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to 'New Bar', new_bar_path, method: :create %>
+<main role="main">
+  <section class="jumbotron text-center" style="background-image: url(https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80")>
+    <!--<div class="container">-->
+      <div class="content">
+        <h1>Happy hour every hour!</h1>
+        <p class="lead text">Find affordable drinks and nice bars near you!</p>
+        <br>
+        <p>
+          <form novalidate="novalidate" class="simple_form search" action="/offers?city=Barcelona" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <div class="search-form-control form-group">
+              <%= form_tag offers_path, method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Enter your city"
+                %>
+              <% end %>
+            </div>
+          </form>
+        </p>
+      </div>
+  </section>
+  <div class="container">
+    <h2 class="title-new-listings">Recent offers</h2>
+    <div class="grid-container">
+      <%@offers.each do |offer|%>
+        <%= link_to offer_path(offer), class: "card-link" do %>
+          <div class="card-trip">
+            <% if offer.bar.photos.attached? %>
+              <%= cl_image_tag offer.bar.photos.first.key %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1523529364348-e930dcb39642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80", opacity: 0.9, crop: :thumb %>
+            <% end %>
+            <div class="card-content">
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= offer.bar.name %></h2>
+                  <div class="city-info">
+                    <i class="fas fa-city"></i>   <p><%=offer.description%></p>
+                  </div>
+                </div>
+              <h2 class="card-trip-pricing"><%= offer.duration %> min</h2>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <%end%>
+    </div>
+  </div>
+</main>
