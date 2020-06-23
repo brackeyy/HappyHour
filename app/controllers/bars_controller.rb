@@ -2,15 +2,24 @@ class BarsController < ApplicationController
 
 before_action :find_bar, only: [:show, :edit, :update, :destroy]
 
-def show
+def index
+  @bars = Bar.geocoded # returns flats with coordinates
 
-    # authorize @booking
-    # @markers =
-    #   [{
-    #     lat: @flat.latitude,
-    #     lng: @flat.longitude
-    #   }]
-    #   authorize @flat
+  @markers = @bars.map do |bar|
+    {
+      lat: flat.latitude,
+      lng: flat.longitude
+    }
+  end
+end
+
+def show
+  @bar = Bar.find(params[:id])
+  @markers =
+    [{
+      lat: @bar.latitude,
+      lng: @bar.longitude
+    }]
 end
 
 
