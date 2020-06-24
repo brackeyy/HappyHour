@@ -20,10 +20,10 @@
 }
 .jumbotron {
   background-size: cover;
+  background-color: #1f1f1f;
   background-position-x: center;
   background-position-y: 40%;
   color: white;
-  height: 80vh;
   // padding-top: 40vh;
   top:0;
 }
@@ -32,4 +32,8 @@
 }
 .container{
   width: 80%;
+}
+
+body {
+  background: linear-gradient(115deg, rgba(31,31,31,1) 0%, rgba(56,56,56,1) 50%, rgba(64,64,64,1) 100%);
 }
