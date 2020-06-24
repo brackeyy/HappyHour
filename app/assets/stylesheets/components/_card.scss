@@ -68,11 +68,19 @@
 
 .card-link{
   color: white;
+
+  // &:hover{
+  // text-decoration: none !important;
+  // color: rgba(0, 0, 0, 0.8);
+  // opacity: 0.8;
+// }
+
   &:hover{
   text-decoration: none !important;
   color: white;
   opacity: 0.8;
 }
+
 }
 
 .card-link + .card-link {
@@ -108,6 +116,9 @@
     font-weight: 800;
     color: white;
   }
+
+}
+
   .fa-clock:before {
     font-size: 15px;
   }
@@ -117,3 +128,4 @@
     }
   }
 }
+
