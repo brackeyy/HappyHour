@@ -3,8 +3,17 @@
   <%#= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100" %>
   <%# end %>
 
+  <div>
+      <h2><%= @offer.description %></h2>
+      <br>
+      <p><%= @offer.bar.name %></p>
+      <br>
+      <p><%= @offer.start_time %></p>
+      <p><%= @offer.expired %></p>
+
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
+
 
     <% @offer.bar.photos.each_with_index do |photo, index| %>
       <div class="carousel-item <%#= "active" if index == 0 %>">
