@@ -14,6 +14,10 @@
 @import "pages/index";
 
 
+.base-settings{
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+}
 .jumbotron {
   background-size: cover;
   background-position-x: center;
@@ -22,4 +26,10 @@
   height: 80vh;
   // padding-top: 40vh;
   top:0;
+}
+.top_container{
+  height: 80px;
+}
+.container{
+  width: 80%;
 }

@@ -1,6 +1,5 @@
 .card-trip {
   overflow: hidden;
-  background: white;
   box-shadow: 0 0 10rpx rgba(0,0,0,0.2);
   border-radius: 5px;
   &:hover{
@@ -68,7 +67,7 @@
 }
 
 .card-link{
-  color: rgba(0, 0, 0, 0.8);
+  color: white;
   &:hover{
   text-decoration: none !important;
   color: rgba(0, 0, 0, 0.8);

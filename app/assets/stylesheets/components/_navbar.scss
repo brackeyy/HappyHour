@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,31 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: white;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 60px;
+  margin-left: 10px;
+}
+
+@media (min-width: 800px) {
+  li.nav-item {
+    display: flex;
+  }
+}
+
+.navbar-lewagon-white {
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  .nav-link {
+    color: white !important;
+  }
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
