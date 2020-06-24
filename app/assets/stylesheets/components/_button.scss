@@ -1,0 +1,14 @@
+.button-offer {
+  background: blue;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  margin-top: 15px;
+  transition: opacity 0.3s ease;
+  width: 200px;
+  &:hover{
+    opacity: 0.7;
+    color: white;
+  }
+}
