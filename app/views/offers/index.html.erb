@@ -10,7 +10,7 @@
               </div>
               <div class="card-desc">
                 <h2><%= offer.bar.name %></h2>
-                <p><i class="fas fa-clock"></i>  <%= offer.duration.strftime("until %I:%M%p")%></p>
+                <p><i class="fas fa-clock"></i>  <%= offer.end_time.strftime("until %I:%M%p")%></p>
               </div>
             </div>
         <%end%>

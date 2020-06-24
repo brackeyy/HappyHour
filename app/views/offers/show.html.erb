@@ -8,10 +8,11 @@
   <div>
       <h2><%= @offer.description %></h2>
       <br>
-      <p><%= @offer.bar.name %></p>
+      <!-- <h2 id= title><%#= @offer.bar.name %></h2> -->
       <br>
-      <p><%= @offer.start_time.strftime("from %I:%M%p") %></p>
-      <p><%= @offer.expired %></p>
+      <p>Offer expires in:</p>
+      <p id="countdown" data-end-time="<%= @offer.end_time %>"></p>
+      <!-- <p><%#= @offer.expired %></p> -->
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -39,7 +40,7 @@
     <div>
       <h2 id="title"><%= @offer.bar.name %></h2>
       <br>
-      <p><%= @offer.description %></p>
+      <!-- <p><%= @offer.description %></p> -->
       <br>
       <p><%= @offer.bar.location %></p>
     </div>

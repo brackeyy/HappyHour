@@ -80,7 +80,7 @@ end
 private
 
 def offer_params
-  params.require(:offer).permit(:description, :start_time, :duration, :expired)
+  params.require(:offer).permit(:description, :start_time, :end_time, :expired)
 end
 
 end
