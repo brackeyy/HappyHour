@@ -77,14 +77,14 @@ bar8.photos.attach(io: file8, filename: 'bar8.png', content_type: 'image/png')
 puts "Flats created."
 puts "Creating offers.."#
 
-offer1 = Offer.create!(bar: bar1, description: "Beer 2 for 1", start_time: DateTime.new(2020,07,03,17), duration: Time.new(60))
-offer2 = Offer.create!(bar: bar2, description: "Shots free", start_time: DateTime.new(2020,07,03,17), duration: Time.new(60))
-offer3 = Offer.create!(bar: bar3, description: "Lady's Drink for free", start_time: DateTime.new(2020,07,03,18), duration: Time.new(60))
-offer4 = Offer.create!(bar: bar4, description: "Beer 3 for 1", start_time: DateTime.new(2020,07,03,18), duration: Time.new(60))
-offer5 = Offer.create!(bar: bar5, description: "Vodka Bull 50% off", start_time: DateTime.new(2020,07,03,19), duration: Time.new(60))
-offer6 = Offer.create!(bar: bar6, description: "Milk 2 for 1", start_time: DateTime.new(2020,07,03,19), duration: Time.new(60))
-offer7 = Offer.create!(bar: bar7, description: "Free beer", start_time: DateTime.new(2020,07,03,20), duration: Time.new(60))
-offer8 = Offer.create!(bar: bar8, description: "Wet T-shirt contest + free beer", start_time: DateTime.new(2020,07,03,20), duration: Time.new(60))
+offer1 = Offer.create!(bar: bar1, description: "Beer 2 for 1", start_time: DateTime.new(2020,07,03,17), end_time: DateTime.new(2020,07,03,17) + 2.hours)
+offer2 = Offer.create!(bar: bar2, description: "Shots free", start_time: DateTime.new(2020,07,03,17), end_time: DateTime.new(2020,07,03,17) + 2.hours)
+offer3 = Offer.create!(bar: bar3, description: "Lady's Drink for free", start_time: DateTime.new(2020,07,03,18), end_time: DateTime.new(2020,07,03,17) + 2.hours)
+offer4 = Offer.create!(bar: bar4, description: "Beer 3 for 1", start_time: DateTime.new(2020,07,03,18), end_time: DateTime.new(2020,07,03,17) + 2.hours)
+offer5 = Offer.create!(bar: bar5, description: "Vodka Bull 50% off", start_time: DateTime.new(2020,07,03,19), end_time: DateTime.new(2020,07,03,17) + 2.hours)
+offer6 = Offer.create!(bar: bar6, description: "Milk 2 for 1", start_time: DateTime.new(2020,07,03,19), end_time: DateTime.new(2020,07,03,17) + 2.hours)
+offer7 = Offer.create!(bar: bar7, description: "Free beer", start_time: DateTime.new(2020,07,03,20), end_time: DateTime.new(2020,07,03,17) + 2.hours)
+offer8 = Offer.create!(bar: bar8, description: "Wet T-shirt contest + free beer", start_time: DateTime.new(2020,07,03,20), end_time: DateTime.new(2020,07,03,17) + 2.hours)
 
 
 puts "Offers created."
