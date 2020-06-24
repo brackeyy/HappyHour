@@ -1,21 +1,19 @@
 <div class="container">
   <h1 class="title-offers">All the available offers ???</h1>
-    <div>
-      <div>
-        <%@offers.each do |offer|%>
-          <%=link_to offer_path(offer), class: "card-link" do %>
-              <div class="card-offer">
-                <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                  <p class="badge-offer"><%=offer.description%></p>
-                  <i class="far fa-heart"></i>
-                </div>
-                <div class="card-desc">
-                  <h2><%= offer.bar.name %></h2>
-                  <p><%= offer.duration.strftime("until %I:%M%p")%></p>
-                </div>
+    <div class ="row">
+      <%@offers.each do |offer|%>
+        <%=link_to offer_path(offer), class: "card-link col-12 col-md-6 col-lg-4" do %>
+            <div class="card-offer">
+              <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+                <p class="badge-offer"><%=offer.description%></p>
+                <i class="far fa-heart"></i>
               </div>
-          <%end%>
+              <div class="card-desc">
+                <h2><%= offer.bar.name %></h2>
+                <p><i class="fas fa-clock"></i>  <%= offer.duration.strftime("until %I:%M%p")%></p>
+              </div>
+            </div>
         <%end%>
-      </div>
+      <%end%>
     </div>
 </div>
