@@ -14,30 +14,39 @@
       <!-- <h2 id= title><%#= @offer.bar.name %></h2> -->
       <br>
       <p>Offer expires in:</p>
-      <p id="countdown" data-end-time="<%= @offer.end_time %>"></p>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <div id="progressBar">
+        <div></div>
+      </div>
       <!-- <p><%#= @offer.expired %></p> -->
 
   <div id="carouselExampleControls" class="carousel slide rounded" data-ride="carousel">
-    <div class="carousel-inner">
+    <div class="box position-relative">
+      <div class="position-absolute black-overlay">
+
+      </div>
+      <p id="countdown" data-end-time="<%= @offer.end_time %>"></p>
+
+      <div class="carousel-inner">
+        <% @offer.bar.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%#= "active" if index == 0 %>">
+            <!-- <img src="..." class="d-block w-100" alt="Flat photo"> -->
+            <%= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100" %>
+          </div>
+        <% end %>
 
 
-      <% @offer.bar.photos.each_with_index do |photo, index| %>
-        <div class="carousel-item <%#= "active" if index == 0 %>">
-          <!-- <img src="..." class="d-block w-100" alt="Flat photo"> -->
-          <%= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100" %>
-        </div>
-      <% end %>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
-
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+    </div>
 
 
   <
@@ -46,11 +55,11 @@
       <div>
         <h2 id="title"><%= @offer.bar.name %></h2>
         <br>
-        
+
         <br>
         <p><%= @offer.bar.location %></p>
       </div>
-     
+
 
     </div>
 

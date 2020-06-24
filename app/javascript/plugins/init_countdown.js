@@ -3,8 +3,9 @@ const initCountdown = () => {
   const element = document.getElementById('countdown')
   if (element) {
     setInterval( () => {
-      const endDate = new Date(element.dataset.endTime)
-      element.innerHTML = countdown(endDate).toString()
+      const remainder = countdown(new Date(element.dataset.endTime))
+      const datestring =  remainder.days + "d -" + remainder.hours + "h :" + remainder.minutes + "m :" + remainder.seconds + "s";
+      element.innerHTML = datestring
     }, 1000)
 
   }
