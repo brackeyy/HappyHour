@@ -7,7 +7,12 @@ class OffersController < ApplicationController
       "
       @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
   @offers = policy_scope(Offer)
+else
+  @offers = Offer.all
+  @offers = policy_scope(Offer)
+
 end
+
 end
 
 def show
