@@ -11,6 +11,8 @@
   </div>
   <%= link_to 'Delete', offer_path(@offer), method: :delete %>
   <%= link_to "Edit your offer", edit_offer_path %>
+  <%= link_to "BOOK!", "/offers/#{@offer.id}/bookings", method: :post %>
+
 </div>
 
 
