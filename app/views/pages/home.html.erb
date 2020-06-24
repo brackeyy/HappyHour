@@ -1,10 +1,9 @@
 <main role="main">
-  <section class="jumbotron text-center" style="background-image: url(https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80")>
+  <section class="jumbotron text-center">
     <!--<div class="container">-->
       <div class="content">
-        <h1>Happy hour every hour!</h1>
+        <h1 class="h1-homepage">Happy hour every hour!</h1>
         <p class="lead text">Find affordable drinks and nice bars near you!</p>
-        <br>
         <p>
           <form novalidate="novalidate" class="simple_form search" action="/offers?city=Barcelona" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
             <div class="search-form-control form-group">
@@ -18,7 +17,6 @@
             </div>
           </form>
         </p>
-        <br>
         <%= link_to "Explore", offers_path, class: "btn button-offer"%>
       </div>
   </section>
