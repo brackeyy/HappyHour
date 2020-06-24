@@ -68,11 +68,19 @@
 
 .card-link{
   color: white;
+
   // &:hover{
   // text-decoration: none !important;
   // color: rgba(0, 0, 0, 0.8);
   // opacity: 0.8;
 // }
+
+  &:hover{
+  text-decoration: none !important;
+  color: white;
+  opacity: 0.8;
+}
+
 }
 
 .card-link + .card-link {
@@ -82,10 +90,11 @@
 
 
 .card-image-category {
-  padding: 10px 20px 80px 10px;
+  padding: 10px 20px 100px 10px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  border-radius: 8px;
   p {
     color: white;
   }
@@ -107,4 +116,16 @@
     font-weight: 800;
     color: white;
   }
+
 }
+
+  .fa-clock:before {
+    font-size: 15px;
+  }
+  &:hover {
+    p {
+      color: white;
+    }
+  }
+}
+

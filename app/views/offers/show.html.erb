@@ -10,7 +10,7 @@
       <br>
       <p><%= @offer.bar.name %></p>
       <br>
-      <p><%= @offer.start_time %></p>
+      <p><%= @offer.start_time.strftime("from %I:%M%p") %></p>
       <p><%= @offer.expired %></p>
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -43,7 +43,7 @@
       <br>
       <p><%= @offer.bar.location %></p>
     </div>
-    <h2 class="card-show-pricing"><%= @offer.start_time %> min </h2>
+    <h2 class="card-show-pricing"><%= @offer.start_time.strftime("from %I:%M%p") %> min </h2>
   </div>
 
   <div class="button-offer-container">
