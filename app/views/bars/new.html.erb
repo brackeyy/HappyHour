@@ -2,17 +2,10 @@
 </div>
 <div class="container">
   <h2>Post a bar:</h2>
-  <div class="form-inputs">
-    <%= simple_form_for(@bar) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :location %>
-    <%= f.input :description %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true, class: ' d-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
-    <div class="button-centered"><%= f.submit class: 'btn btn-primary' %></div>
-    <% end %>
-  </div>
+
   <%= render 'form' %>
 </div>
+
 
 
 
