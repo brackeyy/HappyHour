@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = Booking.where(user: current_user)
+    @bookings = policy_scope(Booking)
+  end
+
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
@@ -13,7 +18,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save!
-      redirect_to dashboard_path
+      redirect_to offer_booking_path(@offer, @booking)
     else
       render :new
     end
