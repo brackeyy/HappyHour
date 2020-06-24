@@ -1,18 +1,11 @@
 <!-- post_restaurant_path -->
-<%= simple_form_for(@bar) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
+<div class="form-inputs">
+    <%= simple_form_for(@bar) do |f| %>
     <%= f.input :name %>
     <%= f.input :location %>
     <%= f.input :description %>
-    <%#= f.input :pictures %>
-
+    <%= f.input :photos, as: :file, hint: 'Upload multiple pictures', input_html: { multiple: true } %>
+    <div class="button-centered"><%= f.submit class: 'btn btn-primary' %></div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
 
