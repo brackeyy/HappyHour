@@ -79,3 +79,33 @@
 .card-link + .card-link {
   margin-left: 0;
 }
+
+
+
+.card-image-category {
+  padding: 10px 20px 80px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  p {
+    color: white;
+  }
+  .fa-heart:before {
+    color:white;
+    font-size: 20px;
+  }
+  .fa-heart:hover {
+    color:red;
+    font-size: 20px;
+  }
+}
+.card-desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+  }
+}
