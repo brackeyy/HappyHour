@@ -2,6 +2,7 @@
   <section class="jumbotron text-center">
     <!--<div class="container">-->
       <div class="content">
+        <%= cl_image_tag "drawingdrinking",  crop: :fill, width: 400%>
         <h1 class="h1-homepage">Happy hour every hour!</h1>
         <p class="lead text">Find affordable drinks and nice bars near you!</p>
         <p>
@@ -15,41 +16,31 @@
                   placeholder: "Enter your city"
                 %>
               <% end %>
-              <%= submit_tag "Explore", class: "btn button-offer"  %>
+              <%= link_to "Explore", offers_path, class: "btn button-dark"%>
             </div>
           </form>
         </p>
 
         <%= link_to "Explore", offers_path, class: "btn button-dark"%>
-        <%#= link_to "Explore", offers_path, class: "btn button-offer"%>
+
       </div>
   </section>
-  <div class="container">
-    <h2 class="title-new-listings">Recent offers</h2>
-    <div class="grid-container">
+  <!--<div class="container"> %>-->
+    <h2 class="title-new-listings" style="padding:0px 15px;">Recent offers</h2>
+    <div class="scrolling-wrapper col-12">
       <%@offers.each do |offer|%>
-        <%= link_to offer_path(offer), class: "card-link" do %>
-          <div class="card-trip">
-            <% if offer.bar.photos.attached? %>
-              <%= cl_image_tag offer.bar.photos.first.key %>
-            <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1523529364348-e930dcb39642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80", opacity: 0.9, crop: :thumb %>
-            <% end %>
-            <div class="card-content">
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= offer.bar.name %></h2>
-                  <div class="city-info">
-                    <i class="fas fa-cocktail"></i>   <p><%=offer.description%></p>
-                  </div>
-                </div>
-
+        <%=link_to offer_path(offer), class: "card-link card-offer col-12 col-md-6 col-lg-4 mt-4" do %>
+              <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+                <p class="badge-offer end-time" id="countdown" data-end-time="<%= offer.end_time %>"></p>
+                <i class="far fa-heart"></i>
               </div>
-            </div>
-          </div>
-
-        <% end %>
+              <div class="card-desc">
+                <h2><%=offer.description %></h2>
+                <p id="countdown" class="end-time" data-end-time="<%= offer.end_time %>"></p>
+                <p><%=offer.bar.name%></p>
+              </div>
+        <%end%>
       <%end%>
     </div>
-  </div>
+  <!--</div>-->
 </main>
