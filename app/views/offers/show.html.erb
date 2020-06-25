@@ -64,8 +64,8 @@
     </div>
 
     <div class="button-offer-container">
-      <%= link_to 'Delete', offer_path(@offer), method: :delete, class: "btn button-offer"  %>
-      <%= link_to "Edit your offer", edit_offer_path(@offer), class: "btn button-offer" %>
+      <%= link_to 'Delete', offer_path(@offer), method: :delete, class: "btn button-offer" if current_user == @offer.bar.user  %>
+      <%= link_to "Edit your offer", edit_offer_path(@offer), class: "btn button-offer" if current_user == @offer.bar.user %>
       <%= link_to "BOOK!", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-offer" %>
     </div>
 

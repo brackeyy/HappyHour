@@ -16,9 +16,9 @@ User.destroy_all
 
 puts "Creating users.."
 
-user1 = User.create(email: "Alf@hotmail.com", password: "123456", password_confirmation: "123456")
-user2 = User.create(email: "nik@gmail.com", password: "123456", password_confirmation: "123456")
-user3 = User.create(email: "linda@gmail.com", password: "123456", password_confirmation: "123456")
+user1 = User.create(email: "Alf@hotmail.com", password: "123456", password_confirmation: "123456", owner: true, premium: 1)
+user2 = User.create(email: "nik@gmail.com", password: "123456", password_confirmation: "123456", owner: true, premium: 1)
+user3 = User.create(email: "linda@gmail.com", password: "123456", password_confirmation: "123456", owner: true, premium: 1)
 
 
 puts "Users created."
