@@ -36,3 +36,17 @@
 .box a:hover {
   opacity: .9;
 }
+
+@media screen and (max-width: 600px) {
+  .bottom-toolbar {
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    border-radius: 0px;
+    background: #1f1f1f;
+    padding: 12px 0px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 3000;
+  }
+}

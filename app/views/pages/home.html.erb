@@ -10,6 +10,7 @@
               <%= form_tag offers_path, method: :get do %>
                 <%= text_field_tag :query,
                   params[:query],
+                  #class: "form-control",
                   class: "form-control",
                   placeholder: "Enter your city"
                 %>
@@ -17,7 +18,7 @@
             </div>
           </form>
         </p>
-        <%= link_to "Explore", offers_path, class: "btn button-offer"%>
+        <%= link_to "Explore", offers_path, class: "btn button-dark"%>
       </div>
   </section>
   <div class="container">
