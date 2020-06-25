@@ -78,7 +78,6 @@
   &:hover{
   text-decoration: none !important;
   color: white;
-  opacity: 0.8;
 }
 
 }
@@ -109,10 +108,11 @@
 }
 .card-desc {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 10px;
   border-radius: 50px;
+  flex-direction: column;
+
   h2 {
     font-size: 18px;
     font-weight: 800;
@@ -125,7 +125,18 @@
 }
 
 .card-offer {
-  background-color: #191919;
   border-radius: 5px;
-  box-shadow: 2px 2px 10px black;
+  background: #1f1f1f;
+  box-shadow: 10px 10px 20px #141414, 
+             -10px -10px 20px #2a2a2a;
+  transition: transform 0.5s;
+  &:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+  }
+}
+
+p#countdown.end-time {
+  font-size: 14px;
+  position: unset;
 }
