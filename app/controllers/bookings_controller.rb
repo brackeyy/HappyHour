@@ -7,7 +7,13 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @offer = Offer.find(params[:offer_id])
     authorize @booking
+    @markers =
+    [{
+      lat: @offer.bar.latitude,
+      lng: @offer.bar.longitude
+    }]
   end
 
   def create
