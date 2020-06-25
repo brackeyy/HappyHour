@@ -6,8 +6,30 @@ class BookingsController < ApplicationController
   end
 
   def show
+    #@booking = Booking.find(params[:id])
+
+
     @booking = Booking.find(params[:id])
+    @offer = Offer.find(params[:offer_id])
     authorize @booking
+
+    @code = @booking.code
+
+    @qrcode = RQRCode::QRCode.new(@code)
+
+    @svg = @qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 6
+      )
+
+    @markers =
+    [{
+      lat: @offer.bar.latitude,
+      lng: @offer.bar.longitude
+    }]
+
   end
 
   def create

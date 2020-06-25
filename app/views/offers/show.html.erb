@@ -4,7 +4,8 @@
   <%# @offer.bar.photos do |photo| %>
   <%#= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100" %>
   <%# end %>
-  <%= link_to "Back", offers_path, class: "btn-sm button-offer mb-3"%>
+
+  <%#= link_to "Back", offers_path, id: "back-button" class: "previous-round" #8249;%>
   <br>
 
 
@@ -63,8 +64,8 @@
     </div>
 
     <div class="button-offer-container">
-      <%= link_to 'Delete', offer_path(@offer), method: :delete, class: "btn button-offer"  %>
-      <%= link_to "Edit your offer", edit_offer_path(@offer), class: "btn button-offer" %>
+      <%= link_to 'Delete', offer_path(@offer), method: :delete, class: "btn button-offer" if current_user == @offer.bar.user  %>
+      <%= link_to "Edit your offer", edit_offer_path(@offer), class: "btn button-offer" if current_user == @offer.bar.user %>
       <%= link_to "BOOK!", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-offer" %>
     </div>
 

@@ -9,7 +9,7 @@
       <img src="">
     <h2 class="card"><%= @bar.user.email %></h2>
   </div>
-  <%= link_to 'Delete', bar_path(@bar), method: :delete %>
-  <%= link_to "Add an offer", new_bar_offer_path(@bar) %>
+    <%= link_to 'Delete', bar_path(@bar), method: :delete if current_user == @bar.user %>
+    <%= link_to "Add an offer", new_bar_offer_path(@bar) if current_user == @bar.user %>
 
 </div>

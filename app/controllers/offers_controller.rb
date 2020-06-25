@@ -1,50 +1,55 @@
 class OffersController < ApplicationController
 
- def index
-  if params[:query].present?
-      sql_query = " \
-        offers.bar.location @@ :query \
-      "
-      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
-  @offers = policy_scope(Offer)
-else
-  @offers = Offer.all
-  @offers = policy_scope(Offer)
+  def index
+    @offers = policy_scope(Offer)
+    if params[:query].present?
+      sql_query = "bars.location @@ :query"
+      @offers = Offer.joins(:bar).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @offers = Offer.all
+    end
 
-end
+  end
 
-end
-
-def show
-  @offer = Offer.find(params[:id])
-  authorize @offer
-   @markers =
+  def show
+    @offer = Offer.find(params[:id])
+    authorize @offer
+    @markers =
     [{
       lat: @offer.bar.latitude,
       lng: @offer.bar.longitude
     }]
-end
+  end
 
- def new
+  def new
     @bar = Bar.find(params[:bar_id])
     @offer = Offer.new
     authorize @offer
   end
 
-def create
-  @bar = Bar.find(params[:bar_id])
-  @offer = Offer.new(offer_params)
-  @offer.bar = @bar
-  @offer.bar.user = current_user
-  authorize @offer
+  def create
+    @bar = Bar.find(params[:bar_id])
+    @offer = Offer.new(offer_params)
+    @offer.bar = @bar
+    @offer.bar.user = current_user
+    authorize @offer
 
-  if @offer.save!
-    #redirect_to offer_path(@offer)
-    redirect_to @offer
-  else
-    render :new
+    if current_user.counter > 2 && current_user.premium == 1
+      flash.notice = "Upgrade your package mf!"
+      render :new
+    elsif current_user.counter > 4 && current_user.premium == 2
+      flash.notice = "Upgrade your package mf!"
+      render :new
+    else
+      if @offer.save!
+        current_user.counter += 1
+        current_user.save
+        redirect_to @offer
+      else
+        render :new
+      end
+    end
   end
-end
 
 def edit
 
