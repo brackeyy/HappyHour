@@ -9,13 +9,14 @@
 
   <p>Find your way to:</p>
   <h3><%= @booking.offer.bar.name %></h3>
-  <p>DISTANCE TBD!!</p>
+  <p id='dist-container'>DISTANCE TBD!!</p>
   <br>
   <div id="map"
+    class="distance-calc"
     style="width: 75%; height: 600px;"
     data-markers="<%= @markers.to_json %>"
 
-   
+
 
 
 
