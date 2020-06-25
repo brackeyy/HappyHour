@@ -34,13 +34,22 @@ class OffersController < ApplicationController
     @offer.bar.user = current_user
     authorize @offer
 
-    if @offer.save!
-    #redirect_to offer_path(@offer)
-    redirect_to @offer
-  else
-    render :new
+    if current_user.counter > 2 && current_user.premium == 1
+      flash.notice = "Upgrade your package mf!"
+      render :new
+    elsif current_user.counter > 4 && current_user.premium == 2
+      flash.notice = "Upgrade your package mf!"
+      render :new
+    else
+      if @offer.save!
+        current_user.counter += 1
+        current_user.save
+        redirect_to @offer
+      else
+        render :new
+      end
+    end
   end
-end
 
 def edit
 
