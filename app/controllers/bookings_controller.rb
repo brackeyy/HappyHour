@@ -6,8 +6,21 @@ class BookingsController < ApplicationController
   end
 
   def show
+    #@booking = Booking.find(params[:id])
+
+
     @booking = Booking.find(params[:id])
     authorize @booking
+    @code = @booking.code
+
+    @qrcode = RQRCode::QRCode.new(@code)
+
+    @svg = @qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 6
+      )
   end
 
   def create
