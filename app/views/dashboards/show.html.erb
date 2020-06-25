@@ -1,8 +1,7 @@
 <h1>Your dashboard</h1>
 <h2>Your offers</h2>
-<%@offers.each do |offer|%>
-  <%=offer.bar.name%>
-  <%= offer.description %>
-  <%=offer.start_time%>
-  <%=offer.end_time%>
+<%@bookings.each do |booking|%>
+  <%= booking.offer.bar.name%>
+  <%= booking.offer.description %>
+  <%= booking.offer.end_time%>
 <%end%>
