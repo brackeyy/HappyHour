@@ -12,3 +12,15 @@
     color: white;
   }
 }
+
+.button-dark {
+  background: #1f1f1f;
+  box-shadow: 12px 12px 24px #0c0c0c, -12px -12px 24px #323232;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  margin-top: 15px;
+  transition: opacity 0.3s ease;
+  width: 200px;
+}
