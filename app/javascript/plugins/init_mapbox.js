@@ -19,6 +19,7 @@ const addMarkersToMap = (map, markers) => {
 };
 
 const fitMapToMarkers = (map, markers) => {
+
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
@@ -29,7 +30,7 @@ const initMapbox = () => {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
-    fitMapToMarkers(map, markers);
+    // fitMapToMarkers(map, markers);
 
     map.addControl(new mapboxgl.NavigationControl());
 
@@ -39,6 +40,9 @@ const initMapbox = () => {
       },
       trackUserLocation: true
       }));
+    map.on("load",()=> {
+     fitMapToMarkers(map, markers);
+    })
   }
 };
 
