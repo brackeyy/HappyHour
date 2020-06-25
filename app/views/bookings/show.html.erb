@@ -3,7 +3,7 @@
 <div class="container">
   <h1>Here is your code</h1>
   <h4>Show this code at the location to receive your offer</h4>
-  <img src="https://store-images.s-microsoft.com/image/apps.33967.13510798887182917.246b0a3d-c3cc-46fc-9cea-021069d15c09.392bf5f5-ade4-4b36-aa63-bb15d5c3817a" alt="qr-code">
+  <%= @svg.html_safe %>
   <br>
   <br>
 
@@ -14,8 +14,14 @@
   <div id="map"
     style="width: 75%; height: 600px;"
     data-markers="<%= @markers.to_json %>"
+
+   
+
+
+
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <br>
+
   <div class="button-offer-container">
     <%= link_to "Back", offers_path, class: "btn button-offer"%>
   </div>
