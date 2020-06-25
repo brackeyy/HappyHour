@@ -28,6 +28,7 @@ import "bootstrap";
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initCountdown } from '../plugins/init_countdown';
+import { distanceCalculation } from '../components/distance_calculation';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 // import { initUpdateNavbarOnScroll } from '../components/navbar';
@@ -35,6 +36,7 @@ import { initCountdown } from '../plugins/init_countdown';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initCountdown();
+  distanceCalculation();
   // initUpdateNavbarOnScroll();
 })
 
