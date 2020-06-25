@@ -5,19 +5,27 @@
   <h4>Show this code at the location to receive your offer</h4>
   <%= @svg.html_safe %>
   <br>
+  <br>
+
   <p>Find your way to:</p>
-  <h3>@booking.bar.name</h3>
+  <h3><%= @booking.offer.bar.name %></h3>
   <p>DISTANCE TBD!!</p>
   <br>
-  <!-- <div id="map"
-    style="width: 100%; height: 600px;"
+  <div id="map"
+    style="width: 75%; height: 600px;"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>"></div>
-    <br> -->
 
+   
+
+
+
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <br>
 
   <div class="button-offer-container">
     <%= link_to "Back", offers_path, class: "btn button-offer"%>
   </div>
+
+  <br>
 
 </div>
