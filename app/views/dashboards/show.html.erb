@@ -1,7 +1,26 @@
-<h1>Your dashboard</h1>
-<h2>Your offers</h2>
-<%@bookings.each do |booking|%>
-  <%= booking.offer.bar.name%>
-  <%= booking.offer.description %>
-  <%= booking.offer.end_time%>
-<%end%>
+
+<div class="container">
+  <h1 class="text-center"><i class="fas fa-tachometer-alt"></i> Your dashboard</h1>
+  <h2>All bookings</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Bar name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Offer expired?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@bookings.order("created_at desc").each do |booking|%>
+        <tr>
+        <th scope="row"><%= booking.id%></th>
+        <td><%= booking.offer.bar.name %></td>
+        <td><%= booking.user.email%></td>
+        <td><%=booking.offer.expired%></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+  Total orders: <%=@bookings.last.id%>
+</div>
