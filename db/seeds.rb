@@ -11,7 +11,9 @@ end
 Booking.destroy_all
 Offer.destroy_all
 Bar.destroy_all
+Subscription.destroy_all
 User.destroy_all
+
 
 
 puts "Creating users.."
@@ -22,6 +24,15 @@ user3 = User.create(email: "linda@gmail.com", password: "123456", password_confi
 
 
 puts "Users created."
+
+
+puts "Creating subscriptions"
+
+subscription1 = Subscription.create!(name: 'Free', premium: 1, description: 'Our free plan allows you to publish up to 3 offers a week')
+subscription2 = Subscription.create!(name: 'Silver', premium: 2, description: 'Our silver plan allows you to publish up to 5 offers a week')
+subscription3 = Subscription.create!(name: 'Gold', premium: 3, description: 'Our Gold plan allows you to publish as many offers as you wish!')
+
+puts "Subscriptions created"
 puts "Creating bars.."
 
 # template

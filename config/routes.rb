@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :index, :show]
   end
 get '/dashboard', to: 'dashboards#show'
-
+get '/subscriptions', to: 'subscriptions#index'
 end

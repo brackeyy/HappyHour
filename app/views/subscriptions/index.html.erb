@@ -1,0 +1,20 @@
+
+<div class="container">
+  <h1 class="title-offers">Choose your subscription plan:</h1>
+    <div class ="row">
+      <%@subscriptions.each do |subscription|%>
+
+            <div class="card-offer">
+              </div>
+              <div class="card-desc">
+                <h2><%= subscription.name %></h2>
+
+                <p><%=subscription.description%></p>
+                <p><%= subscription.premium %></p>
+              </div>
+              <%end%>
+            </div>
+             <%#=link_to subscription_path(subscription), class: "card-link col-12 col-md-6 col-lg-4 mt-4" do %>
+        <%#end%>
+
+</div>
