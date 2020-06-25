@@ -45,8 +45,13 @@
     border-radius: 0px;
     background: #1f1f1f;
     padding: 12px 0px;
-    display: flex;
+    display: flex!important;
     justify-content: space-around;
     z-index: 3000;
+    align-items: center;
   }
+}
+
+.bottom-toolbar {
+  display:none;
 }
