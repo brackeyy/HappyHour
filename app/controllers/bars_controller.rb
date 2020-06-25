@@ -23,7 +23,7 @@ def create
     @bar = Bar.new(bar_params)
     @bar.user = current_user
     authorize @bar
-      if @bar.save!
+      if @bar.save
         redirect_to bar_path(@bar)
       else
         render :new
