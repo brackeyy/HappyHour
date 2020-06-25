@@ -6,8 +6,8 @@
         <h1 class="h1-homepage">Happy hour every hour!</h1>
         <p class="lead text">Find affordable drinks and nice bars near you!</p>
         <p>
-          <form novalidate="novalidate" class="simple_form search" action="/offers?city=Barcelona" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-            <div class="search-form-control form-group">
+          <form novalidate="novalidate" class="simple_form search md-form active-purple active-purple-2 mb-3" action="/offers?city=Barcelona" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <div class="search-form-control form-group ">
               <%= form_tag offers_path, method: :get do %>
                 <%= text_field_tag :query,
                   params[:query],
@@ -20,8 +20,6 @@
             </div>
           </form>
         </p>
-
-        <%= link_to "Explore", offers_path, class: "btn button-dark"%>
 
       </div>
   </section>
