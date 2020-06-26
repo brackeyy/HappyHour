@@ -140,6 +140,8 @@
 p#countdown.end-time {
   font-size: 14px;
   position: unset;
+  color: white;
+  z-index: 1000;
 }
 
 .header-show {
@@ -155,6 +157,13 @@ p#countdown.end-time {
   align-items: center;
 }
 
+.card-subscription{
+  margin-bottom: 20px;
+  text-align: center;
+  align-items: center;
+  padding: 25px;
+}
+
 @media screen and (max-width: 740px) {
   .scrolling-wrapper {
     overflow-x: scroll;
@@ -163,7 +172,7 @@ p#countdown.end-time {
 
     .card-link {
       display: inline-block;
-      width: 85%;      
+      width: 85%;
     }
   }
   .info-show {
@@ -171,4 +180,5 @@ p#countdown.end-time {
     align-items: baseline;
     margin-top: 18px;
   }
+}
 }

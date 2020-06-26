@@ -1,7 +1,10 @@
 
 <div class="container">
-  <h1 class="text-center"><i class="fas fa-tachometer-alt my-3"></i> Your dashboard</h1>
-  <h2>All bookings</h2>
+  <h1 class="text-center my-5"> <strong>Want more?</strong></h1>
+  <%= link_to "Go Premium", subscriptions_path, class: "btn btn-lg btn-block button-subscription " if current_user.owner%>
+  <h3 class="text-center">Your dashboard</h3>
+  <br>
+  <h5>All bookings</h5>
   <table class="table">
     <thead>
       <tr>
