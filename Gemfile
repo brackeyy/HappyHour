@@ -17,7 +17,6 @@ gem 'devise'
 # cloudinary setup
 gem 'cloudinary', '~> 1.12.0'
 # secure cloudinary token
-gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgresql as the database for Active Record
