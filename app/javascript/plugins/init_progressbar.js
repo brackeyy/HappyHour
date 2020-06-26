@@ -11,4 +11,4 @@ function progress(timeleft, timetotal, $element) {
     }
 };
 
-progress(180, 180, $('#progressBar'));
+progress(3600, 3600, $('#progressBar'));

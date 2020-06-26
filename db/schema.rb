@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_25_105540) do
+ActiveRecord::Schema.define(version: 2020_06_25_151033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,28 @@ ActiveRecord::Schema.define(version: 2020_06_25_105540) do
     t.index ["bar_id"], name: "index_offers_on_bar_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "subscription_sku"
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "subscription_id", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subscription_id"], name: "index_orders_on_subscription_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "name"
+    t.integer "premium", default: 1
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -78,7 +100,7 @@ ActiveRecord::Schema.define(version: 2020_06_25_105540) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "owner"
-    t.integer "premium"
+    t.integer "premium", default: 1
     t.integer "counter", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -89,4 +111,6 @@ ActiveRecord::Schema.define(version: 2020_06_25_105540) do
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
   add_foreign_key "offers", "bars"
+  add_foreign_key "orders", "subscriptions"
+  add_foreign_key "orders", "users"
 end
