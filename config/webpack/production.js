@@ -1,4 +1,4 @@
-require("dotenv").config();
+require(".env").config();
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'production'
 
