@@ -144,13 +144,25 @@ p#countdown.end-time {
   z-index: 1000;
 }
 
+.header-show {
+  margin-top: 8px;
+}
+
+.offer-show {
+  font-size: 20px;
+}
+
+.info-show {
+  display: flex;
+  align-items: center;
+}
+
 .card-subscription{
   margin-bottom: 20px;
   text-align: center;
   align-items: center;
   padding: 25px;
 }
-
 
 @media screen and (max-width: 740px) {
   .scrolling-wrapper {
@@ -163,4 +175,10 @@ p#countdown.end-time {
       width: 85%;
     }
   }
+  .info-show {
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 18px;
+  }
+}
 }

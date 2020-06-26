@@ -30,3 +30,19 @@
 .fa-purple {
   color: $purple;
 }
+
+.fa-tag {
+  color: #F18F01; 
+  margin-right: 9px;
+}
+
+.fa-city {
+  margin-right: 5px;
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 740px) {
+  .fa-city {
+    margin-left: 0px;
+  }
+}
