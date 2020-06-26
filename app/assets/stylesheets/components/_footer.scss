@@ -1,46 +1,48 @@
-.footer {
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: space-between;
-  height: 120px;
-  padding: 0px 50px;
-  color: rgba(255,255,255,0.3);
-  margin-top: 30px;
-}
+@media screen and (min-width: 740px) {
+  .footer {
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    padding: 0px 50px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 30px;
+  }
 
 
-.footer .fa-heart {
-  color: #D23333;
-}
+  .footer .fa-heart {
+    color: #D23333;
+  }
 
-.footer-logo img {
-  max-width: 80px;
-  opacity: .6;
-}
+  .footer-logo img {
+    max-width: 80px;
+    opacity: .6;
+  }
 
-.box{
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  a{
-  margin: 10px;
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
+  .box{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+    margin: 10px;
+    color: black;
+    opacity: 1;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 0px 10px;
+    }
+  }
+
+  .box a:hover {
+    opacity: .9;
   }
 }
 
-.box a:hover {
-  opacity: .9;
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 740px) {
   .bottom-toolbar {
     width: 100%;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     border-radius: 0px;
     background: #1f1f1f;
@@ -49,6 +51,9 @@
     justify-content: space-around;
     z-index: 3000;
     align-items: center;
+  }
+  .footer {
+    display:none;
   }
 }
 

@@ -2,7 +2,7 @@
   <section class="jumbotron text-center">
     <!--<div class="container">-->
       <div class="content">
-        <%= cl_image_tag "drawingdrinking",  crop: :fill, width: 400%>
+        <%= cl_image_tag "drawingdrinking",  crop: :fill, width: 400, class: "image-homepage"%>
         <h1 class="h1-homepage">Happy hour every hour!</h1>
         <p class="lead text">Find affordable drinks and nice bars near you!</p>
         <p>
@@ -24,10 +24,10 @@
       </div>
   </section>
   <!--<div class="container"> %>-->
-    <h2 class="title-new-listings" style="padding:0px 15px;">Recent offers</h2>
-    <div class="scrolling-wrapper col-12">
+    <h2 class="title-new-listings container" style="padding:0px 15px;">Recent offers</h2>
+    <div class="scrolling-wrapper new-listings">
       <%@offers.each do |offer|%>
-        <%=link_to offer_path(offer), class: "card-link card-offer col-12 col-md-6 col-lg-4 mt-4" do %>
+        <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
               <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                 <p class="badge-offer end-time" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <i class="far fa-heart"></i>

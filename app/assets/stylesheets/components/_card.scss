@@ -116,7 +116,7 @@
   flex-direction: column;
 
   h2 {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 800;
     color: white;
   }
@@ -142,7 +142,7 @@ p#countdown.end-time {
   position: unset;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 740px) {
   .scrolling-wrapper {
     overflow-x: scroll;
     overflow-y: hidden;
