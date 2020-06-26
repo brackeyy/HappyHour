@@ -2,3 +2,14 @@
   width: 80%;
   border-radius: 5px;
 }
+
+.form-control {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 780px) {
+  .form-control {
+    width: 100%;
+  }
+}
