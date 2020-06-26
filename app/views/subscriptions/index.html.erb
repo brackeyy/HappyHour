@@ -4,17 +4,14 @@
     <div class ="row">
       <%@subscriptions.each do |subscription|%>
 
-            <div class="card-offer">
-              </div>
-              <div class="card-desc">
+            <div class="card-offer card-subscription">
+              <div class="circle"></div>
                 <h2><%= subscription.name %></h2>
-
                 <p><%=subscription.description%></p>
-                <p><%= subscription.premium %></p>
-              </div>
-              <%=link_to "Book", "/orders?subscription_id=#{subscription.id}", method: :post, class: "card-link col-12 col-md-6 col-lg-4 mt-4" %>
-              <%end%>
+              <%=link_to "Book", "/orders?subscription_id=#{subscription.id}", method: :post, class: "btn button-dark" %>
             </div>
+          <%end%>
+        </div>
 
 
 </div>
