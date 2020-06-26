@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="title-offers">All the available offers ???</h1>
+  <h1 class="title-offers">Offers matching your search:</h1>
     <div class ="row">
       <%@offers.each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link col-12 col-md-6 col-lg-4 mt-4" do %>
@@ -9,9 +9,9 @@
                 <i class="far fa-heart"></i>
               </div>
               <div class="card-desc">
-                <h2><%= offer.bar.name %></h2>
-                <p id="countdown" class="end-time" data-end-time="<%= offer.end_time %>"></p> 
-                <p><%=offer.description%></p>            
+                <p><i class="fas fa-tag" style="color: #F18F01; margin-right: 3px;"></i>   <%=  offer.description%></p> 
+                <h2 class="h2-cards"><%= offer.bar.name %></h2>
+                <p id="countdown" class="end-time" data-end-time="<%= offer.end_time %>"></p>         
               </div>
             </div>
         <%end%>

@@ -1,0 +1,9 @@
+@media screen and (min-width: 740px) {
+  .new-listings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+}
