@@ -28,9 +28,9 @@ puts "Users created."
 
 puts "Creating subscriptions"
 
-subscription1 = Subscription.create!(name: 'Free', premium: 1, description: 'Our free plan allows you to publish up to 3 offers a week')
-subscription2 = Subscription.create!(name: 'Silver', premium: 2, description: 'Our silver plan allows you to publish up to 5 offers a week')
-subscription3 = Subscription.create!(name: 'Gold', premium: 3, description: 'Our Gold plan allows you to publish as many offers as you wish!')
+subscription1 = Subscription.create!(name: 'Free', premium: 1, description: 'Our free plan allows you to publish up to 3 offers a week', price: 0)
+subscription2 = Subscription.create!(name: 'Silver', premium: 2, description: 'Our silver plan allows you to publish up to 5 offers a week', price: 50)
+subscription3 = Subscription.create!(name: 'Gold', premium: 3, description: 'Our Gold plan allows you to publish as many offers as you wish!', price: 70)
 
 puts "Subscriptions created"
 puts "Creating bars.."

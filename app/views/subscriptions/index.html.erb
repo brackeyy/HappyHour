@@ -12,9 +12,9 @@
                 <p><%=subscription.description%></p>
                 <p><%= subscription.premium %></p>
               </div>
+              <%=link_to "Book", "/orders?subscription_id=#{subscription.id}", method: :post, class: "card-link col-12 col-md-6 col-lg-4 mt-4" %>
               <%end%>
             </div>
-             <%#=link_to subscription_path(subscription), class: "card-link col-12 col-md-6 col-lg-4 mt-4" do %>
-        <%#end%>
+
 
 </div>
