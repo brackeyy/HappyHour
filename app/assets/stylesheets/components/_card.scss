@@ -142,6 +142,19 @@ p#countdown.end-time {
   position: unset;
 }
 
+.header-show {
+  margin-top: 8px;
+}
+
+.offer-show {
+  font-size: 20px;
+}
+
+.info-show {
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (max-width: 740px) {
   .scrolling-wrapper {
     overflow-x: scroll;
@@ -152,5 +165,10 @@ p#countdown.end-time {
       display: inline-block;
       width: 85%;      
     }
+  }
+  .info-show {
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 18px;
   }
 }

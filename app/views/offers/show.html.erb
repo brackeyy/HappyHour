@@ -1,72 +1,52 @@
-<div class="top_container">
-</div>
 <div class="container">
-  <%# @offer.bar.photos do |photo| %>
-  <%#= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100" %>
-  <%# end %>
+  <div id="carouselExampleControls" class="carousel slide rounded" data-ride="carousel">
+      <div class="box position-relative">
+        <div class="position-absolute black-overlay">
 
-  <%#= link_to "Back", offers_path, id: "back-button" class: "previous-round" #8249;%>
-  <br>
+        </div>
+        <p id="countdown" data-end-time="<%= @offer.end_time %>"></p>
 
+        <div class="carousel-inner">
+          <% @offer.bar.photos.each_with_index do |photo, index| %>
+            <div class="carousel-item <%#= "active" if index == 0 %>">
+              <!-- <img src="..." class="d-block w-100" alt="Flat photo"> -->
+              <%= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100" %>
+            </div>
+          <% end %>
+
+
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+  <div class="header-show">
+    <h1 id="h1-show"><%= @offer.bar.name %></h1>
+    <div class="info-show">
+      <p class="offer-show"><i class="fas fa-tag"></i><%= @offer.description %></p>
+      <p><i class="fas fa-city fa-purple"></i><%= @offer.bar.location %></p>
+    </div>
+  </div>
 
   <div>
-      <h2><%= @offer.description %></h2>
-      <br>
-      <!-- <h2 id= title><%#= @offer.bar.name %></h2> -->
-      <br>
+      <h2></h2>
+      <h2 id= title><%#= @offer.bar.name %></h2>
+      <%= link_to "Book now", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-book" %>
       <p>Offer expires in:</p>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <div id="progressBar">
         <div></div>
       </div>
-      <!-- <p><%#= @offer.expired %></p> -->
-
-  <div id="carouselExampleControls" class="carousel slide rounded" data-ride="carousel">
-    <div class="box position-relative">
-      <div class="position-absolute black-overlay">
-
-      </div>
-      <p id="countdown" data-end-time="<%= @offer.end_time %>"></p>
-
-      <div class="carousel-inner">
-        <% @offer.bar.photos.each_with_index do |photo, index| %>
-          <div class="carousel-item <%#= "active" if index == 0 %>">
-            <!-- <img src="..." class="d-block w-100" alt="Flat photo"> -->
-            <%= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100" %>
-          </div>
-        <% end %>
-
-
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
-    </div>
-
-
-
-    <div class="card-show-infos">
-      <div>
-        <h2 id="title"><%= @offer.bar.name %></h2>
-        <br>
-
-        <br>
-        <p><%= @offer.bar.location %></p>
-      </div>
-
-
-    </div>
 
     <div class="button-offer-container">
       <%= link_to 'Delete', offer_path(@offer), method: :delete, class: "btn button-offer" if current_user == @offer.bar.user  %>
       <%= link_to "Edit your offer", edit_offer_path(@offer), class: "btn button-offer" if current_user == @offer.bar.user %>
-      <%= link_to "BOOK!", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-offer" %>
     </div>
 
 
@@ -80,3 +60,7 @@
   <%= link_to "Back", offers_path, class: "btn button-offer"%>
   </div>
 </div>
+
+  
+
+    </div>
