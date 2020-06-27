@@ -12,14 +12,16 @@
 </div>
 
 <div class="bottom-toolbar">
-  <%if #current_user.owner?%>  
-    <a href="/"><i class="fas fa-home btn btn-home rounded-circle"></i></a>
-    <a href="/dashboard"><i class="fas fa-tachometer-alt btn btn-map rounded-circle"></i></a>
-    <a href="/bars/new"><i class="fas fa-plus btn btn-add rounded-circle"></i></a>
-  <%else%>
-    <a href="/"><i class="fas fa-home btn btn-home rounded-circle"></i></a>
-    <a href="/map"><i class="fas fa-map-marked-alt btn btn-map rounded-circle"></i></a>
-    <a href="/bars/new"><i class="fas fa-plus btn btn-add rounded-circle"></i></a>
+  <%if current_user%>
+      <% if current_user.owner %>
+      <a href="/"><i class="fas fa-home btn btn-home rounded-circle"></i></a>
+      <a href="/dashboard"><i class="fas fa-tachometer-alt btn btn-map rounded-circle"></i></a>
+      <a href="/bars/new"><i class="fas fa-plus btn btn-add rounded-circle"></i></a>
+    <%else%>
+      <a href="/"><i class="fas fa-home btn btn-home rounded-circle"></i></a>
+      <a href="/dashboard"><i class="fas fa-qrcode btn btn-map rounded-circle"></i></a>
+      <a href="/map"><i class="fas fa-map-marked btn btn-home rounded-circle"></i></a>
+    <% end %>
   <%end%>
 </div>
 
