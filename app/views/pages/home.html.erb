@@ -24,9 +24,41 @@
       </div>
   </section>
   <!--<div class="container"> %>-->
-    <h2 class="title-new-listings container" style="padding:0px 15px;">Recent offers</h2>
+    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>Recent offers</strong></h2>
     <div class="scrolling-wrapper new-listings">
       <%@offers.each do |offer|%>
+        <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
+              <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+                <p class="badge-offer end-time" id="countdown" data-end-time="<%= offer.end_time %>"></p>
+                <i class="far fa-heart"></i>
+              </div>
+              <div class="card-desc">
+                <h2><%=offer.description %></h2>
+                <p id="countdown" class="end-time" data-end-time="<%= offer.end_time %>"></p>
+                <p><%=offer.bar.name%></p>
+              </div>
+        <%end%>
+      <%end%>
+    </div>
+    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>Staff picks</strong></h2>
+    <div class="scrolling-wrapper new-listings">
+      <%@offers[2,5].each do |offer|%>
+        <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
+              <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+                <p class="badge-offer end-time" id="countdown" data-end-time="<%= offer.end_time %>"></p>
+                <i class="far fa-heart"></i>
+              </div>
+              <div class="card-desc">
+                <h2><%=offer.description %></h2>
+                <p id="countdown" class="end-time" data-end-time="<%= offer.end_time %>"></p>
+                <p><%=offer.bar.name%></p>
+              </div>
+        <%end%>
+      <%end%>
+    </div>
+    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>Most popular</strong></h2>
+    <div class="scrolling-wrapper new-listings">
+      <%@offers[3,5].each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
               <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                 <p class="badge-offer end-time" id="countdown" data-end-time="<%= offer.end_time %>"></p>
