@@ -10,7 +10,7 @@
           <% @offer.bar.photos.each_with_index do |photo, index| %>
             <div class="carousel-item <%#= "active" if index == 0 %>">
               <!-- <img src="..." class="d-block w-100" alt="Flat photo"> -->
-              <%= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100" %>
+              <%= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100 gradient" %>
             </div>
           <% end %>
 
@@ -61,6 +61,6 @@
   </div>
 </div>
 
-  
+
 
     </div>

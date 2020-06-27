@@ -1,38 +1,38 @@
-.card-trip {
-  overflow: hidden;
-  box-shadow: 0 0 10rpx rgba(0,0,0,0.2);
-  border-radius: 5px;
-  &:hover{
-    opacity: 0.8;
-  }
-  img{
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  }
-  h2{
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0;
-  }
-  p{
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-  }
-}
+// .card-trip {
+//   overflow: hidden;
+//   box-shadow: 0 0 10rpx rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   &:hover{
+//     opacity: 0.8;
+//   }
+//   img{
+//   height: 200px;
+//   width: 100%;
+//   object-fit: cover;
+//   }
+//   h2{
+//   font-size: 20px;
+//   font-weight: bold;
+//   margin: 0;
+//   }
+//   p{
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+//   }
+// }
 
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
+// .card-trip .card-trip-infos {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   position: relative;
+// }
 
-.card-trip-pricing {
-  min-width: 60px;
-}
+// .card-trip-pricing {
+//   min-width: 60px;
+// }
 
 .fa-cocktail {
   color: #6CBDB7;
@@ -49,15 +49,15 @@
 }
 
 
-.services-info {
-  display: flex;
-  text-align: center;
-  padding-bottom: 20px;
-  .fas {
-    font-size: 20px;
-    color: #6CBDB7;
-  }
-}
+// .services-info {
+//   display: flex;
+//   text-align: center;
+//   padding-bottom: 20px;
+//   .fas {
+//     font-size: 20px;
+//     color: #6CBDB7;
+//   }
+// }
 
 
 @media (max-width: 700px) {
@@ -93,7 +93,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-radius: 8px;
+  border-radius: 8px 8px 20px 20px ;
   background-position: center;
   background-size: cover;
   p {
@@ -111,14 +111,17 @@
 .card-desc {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 50px;
-  flex-direction: column;
+  position: relative;
+  align-items: baseline;
+
 
   h2 {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 800;
     color: white;
+    opacity: 0.9;
   }
 
 .fa-clock:before {
@@ -181,4 +184,9 @@ p#countdown.end-time {
     margin-top: 18px;
   }
 }
-
+.p-cards{
+  color: rgba(255,255,255,0.5);
+}
+.right{
+  height: 1rem;
+}

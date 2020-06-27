@@ -1,18 +1,18 @@
 <div class="container">
-  <h1 class="title-offers">Offers matching your search:</h1>
+  <h6 class="title-offers"><strong>Offers matching your search:</strong></h6>
     <div class ="row">
       <%@offers.each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link col-12 col-md-6 col-lg-4 mt-4" do %>
             <div class="card-offer">
-              <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.30)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                 <p class="badge-offer end-time" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <i class="far fa-heart"></i>
               </div>
               <div class="card-desc">
-                <p><i class="fas fa-tag"></i>   <%=  offer.description%></p> 
-                <p><i class="fas fa-tag" style="color: #F18F01; margin-right: 3px;"></i>   <%=  offer.description%></p>
-                <h2 class="h2-cards"><%= offer.bar.name %></h2>
-                <p id="countdown" class="end-time" data-end-time="<%= offer.end_time %>"></p>
+                <h2><i class="fas fa-tag"></i>   <%=  offer.description%></h2>
+                <div class="right">
+                  <p class="p-cards">@ <%= offer.bar.name %></p>
+                </div>
               </div>
             </div>
         <%end%>
