@@ -4,7 +4,6 @@
 }
 
 #h1-show {
-  border-bottom: 1px solid white;
   width:40%;
 }
 
@@ -17,6 +16,9 @@
   }
   #h1-show {
     width: 100%;
-    font-size: 38px;
+    position: absolute;
+    top: 45%;
+    left: 35%;
+
   }
 }
