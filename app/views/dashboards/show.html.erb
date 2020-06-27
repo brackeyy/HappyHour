@@ -1,46 +1,50 @@
 
 <div class="container">
-  <h1 class="text-center my-5"> <strong>Want more?</strong></h1>
-  <%= link_to "Go Premium", subscriptions_path, class: "btn btn-lg btn-block button-subscription " if current_user.owner%>
-  <h3 class="text-center mt-5"><strong>Insights</strong></h3>
-  <br>
-  <div class="stats">
-    <div class="total-orders text-center">
-      <p>Total codes: </p>
-      <h4><strong><%=@bookings.last.id%></strong></h4>
-    </div>
-    <div class="total-orders text-center">
-      <p>Nights out: </p>
-      <h4><strong>8</strong></h4>
-    </div>
-    <div class="total-orders text-center">
-      <p>EUR saved: </p>
-      <h4><strong>21.60</strong></h4>
-    </div>
-  </div>
-  <h3 class="text-center mt-5"><strong>Your bookings</strong></h3>
-  <br>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Bar</th>
-        <th scope="col">Offer</th>
-        <th scope="col">Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%@bookings.order("created_at desc").each do |booking|%>
-        <tr>
-        <td><%= booking.offer.bar.name %></td>
-        <td><%= booking.offer.description%></td>
-        <% if booking.offer.expired %>
-          <td>expired</td>
-        <% else %>
-          <td>active</td>
-        <% end %>
-        </tr>
-      <%end%>
-    </tbody>
-  </table>
+  <% if current_user %>
+ <!--    <%# if !current_user.owner %> -->
+
+      <h3 class="text-center mt-5"><strong>Insights</strong></h3>
+      <br>
+      <div class="stats">
+        <div class="total-orders text-center">
+          <p>Total codes: </p>
+          <!-- <h4><strong><%=@bookings.last.id%></strong></h4> -->
+        </div>
+        <div class="total-orders text-center">
+          <p>Nights out: </p>
+          <h4><strong>8</strong></h4>
+        </div>
+        <div class="total-orders text-center">
+          <p>EUR saved: </p>
+          <h4><strong>21.60</strong></h4>
+        </div>
+      </div>
+      <h3 class="text-center mt-5"><strong>Your bookings</strong></h3>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Bar</th>
+            <th scope="col">Offer</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@bookings.order("created_at desc").each do |booking|%>
+            <tr>
+            <td><%= booking.offer.bar.name %></td>
+            <td><%= booking.offer.description%></td>
+            <% if booking.offer.expired %>
+              <td>expired</td>
+            <% else %>
+              <td>active</td>
+            <% end %>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+
+
+  <% end %>
 
 </div>
