@@ -34,7 +34,7 @@
       <p><i class="fas fa-city fa-purple"></i><%= @bar.location %></p>
     </div>
   </div>
-  <div class="buttons d-flex justify-content-around">
+  <div class="bar-buttons d-flex justify-content-around">
     <%= link_to 'Delete my bar', bar_path(@bar), class: "btn button-dark", method: :delete if current_user == @bar.user %>
     <%= link_to "Add an offer", new_bar_offer_path(@bar), class: "btn button-dark" if current_user == @bar.user %>
   </div>
