@@ -29,7 +29,7 @@
       <%@offers.each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
               <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                <p class="badge-offer end-time" id="countdown" data-end-time="<%= offer.end_time %>"></p>
+                <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <i class="far fa-heart"></i>
               </div>
               <div class="card-desc">
@@ -45,7 +45,7 @@
       <%@offers[2,5].each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
               <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                <p class="badge-offer end-time" id="countdown" data-end-time="<%= offer.end_time %>"></p>
+                <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <i class="far fa-heart"></i>
               </div>
               <div class="card-desc">
@@ -61,7 +61,7 @@
       <%@offers[3,5].each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
               <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                <p class="badge-offer end-time" id="countdown" data-end-time="<%= offer.end_time %>"></p>
+                <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <i class="far fa-heart"></i>
               </div>
               <div class="card-desc">
