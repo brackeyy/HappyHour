@@ -40,7 +40,7 @@
   <div>
       <h2></h2>
       <h2 id= title><%#= @offer.bar.name %></h2>
-      <%= link_to "Book now", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-book" %>
+      <%= link_to "Claim", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-book" %>
       <p>Offer expires in:</p>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <div id="progressBar">

@@ -1,19 +1,16 @@
-<div class="top_container">
-</div>
-<div class="container">
-  <h1>Here is your code</h1>
-  <h4>Show this code at the location to receive your offer</h4>
-  <%= @svg.html_safe %>
-  <br>
+<div class="container text-center ">
+  <h1><strong>Here is your code</strong></h1>
+  <p class="py-1 rounded", style="background-color: rgba(255,255,255,1); width: 205px; margin: 0 auto;"> <%= @svg.html_safe %></p>
+  <h5 class="mt-4">Show this code at the location to receive your offer</h5>
   <br>
 
-  <p>Find your way to:</p>
-  <h3><%= @booking.offer.bar.name %></h3>
-  <p id='dist-container'>DISTANCE TBD!!</p>
+  <h1>Find your way to:</h1>
+  <h5><%= @booking.offer.bar.name %></h5>
+  <h5 id='dist-container' >DISTANCE TBD!!</h5>
   <br>
   <div id="map"
     class="distance-calc"
-    style="width: 100%; height: 600px;"
+    style="width: 100%; height: 300px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <br>
