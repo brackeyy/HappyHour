@@ -1,22 +1,35 @@
 
 <div class="container">
   <% if current_user %>
- <!--    <%# if !current_user.owner %> -->
-
+    <% if current_user.owner %>
+      <h1 class="text-center my-5"><strong>Want more?</strong></h1>
+      <%= link_to "Get Premium", subscriptions_path, class: "btn  button-offer", style: "margin: 0 auto; display: block"   %>
       <h3 class="text-center mt-5"><strong>Insights</strong></h3>
       <br>
       <div class="stats">
         <div class="total-orders text-center">
-          <p>Total codes: </p>
-          <!-- <h4><strong><%=@bookings.last.id%></strong></h4> -->
+          <p>Total number of offers: </p>
+          <h4><strong><%=@offers.count%></strong></h4>
         </div>
         <div class="total-orders text-center">
-          <p>Nights out: </p>
-          <h4><strong>8</strong></h4>
+          <p>Booked codes: </p>
+          <h4><strong>15</strong></h4>
+        </div>
+      </div>
+      <div class="stats mt-4">
+        <div class="total-orders text-center">
+          <p>Current subscription: </p>
+          <% if current_user.premium == 1 %>
+            <h4><strong>Bronze </strong></h4>
+          <% elsif current_user.premium == 2 %>
+            <h4><strong>Silver </strong></h4>
+          <% else %>
+            <h4><strong>Gold </strong></h4>
+          <% end %>
         </div>
         <div class="total-orders text-center">
-          <p>EUR saved: </p>
-          <h4><strong>21.60</strong></h4>
+          <p>Additional EUR profit: </p>
+          <h4><strong>531.60</strong></h4>
         </div>
       </div>
       <h3 class="text-center mt-5"><strong>Your bookings</strong></h3>
@@ -44,6 +57,50 @@
         </tbody>
       </table>
 
+    <% else %>
+
+      <h3 class="text-center mt-5"><strong>Insights</strong></h3>
+      <br>
+      <div class="stats">
+        <div class="total-orders text-center">
+          <p>Total codes: </p>
+          <h4><strong><%=@bookings.last.id%></strong></h4>
+        </div>
+        <div class="total-orders text-center">
+          <p>Nights out: </p>
+          <h4><strong>15</strong></h4>
+        </div>
+        <div class="total-orders text-center">
+          <p>EUR saved: </p>
+          <h4><strong>31.60</strong></h4>
+        </div>
+      </div>
+      <h3 class="text-center mt-5"><strong>Your bookings</strong></h3>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Bar</th>
+            <th scope="col">Offer</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@bookings.order("created_at desc").each do |booking|%>
+            <tr>
+            <td><%= booking.offer.bar.name %></td>
+            <td><%= booking.offer.description%></td>
+            <% if booking.offer.expired %>
+              <td>expired</td>
+            <% else %>
+              <td>active</td>
+            <% end %>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+
+    <% end %>
 
   <% end %>
 
