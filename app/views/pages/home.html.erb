@@ -33,9 +33,9 @@
                 <i class="far fa-heart"></i>
               </div>
               <div class="card-desc">
-                <h2><%=offer.description %></h2>
+                <h2><%=offer.description.truncate(15) %></h2>
                 <p id="countdown" class="end-time" data-end-time="<%= offer.end_time %>"></p>
-                <p><%=offer.bar.name%></p>
+                <p><%=offer.bar.name.truncate(10)%></p>
               </div>
         <%end%>
       <%end%>
@@ -49,9 +49,9 @@
                 <i class="far fa-heart"></i>
               </div>
               <div class="card-desc">
-                <h2><%=offer.description %></h2>
+                <h2><%=offer.description.truncate(15) %></h2>
                 <p id="countdown" class="end-time" data-end-time="<%= offer.end_time %>"></p>
-                <p><%=offer.bar.name%></p>
+                <p><%=offer.bar.name.truncate(10)%></p>
               </div>
         <%end%>
       <%end%>
@@ -65,9 +65,9 @@
                 <i class="far fa-heart"></i>
               </div>
               <div class="card-desc">
-                <h2><%=offer.description %></h2>
+                <h2><%=offer.description.truncate(15) %></h2>
                 <p id="countdown" class="end-time" data-end-time="<%= offer.end_time %>"></p>
-                <p><%=offer.bar.name%></p>
+                <p><%=offer.bar.name.truncate(10)%></p>
               </div>
         <%end%>
       <%end%>

@@ -9,7 +9,6 @@
             <div class="carousel-item <%#= "active" if index == 0 %>">
               <!-- <img src="..." class="d-block w-100" alt="Flat photo"> -->
               <p class="badge-offer end-time badge-show" id="countdown" data-end-time="<%= @offer.end_time %>"></p>
-              <h1 id="h1-show"><%= @offer.bar.name %></h1>
               <%= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100 rounded gradient" %>
             </div>
 
@@ -28,7 +27,8 @@
       </div>
 
   <div class="header-show">
-    <div class="info-show d-flex justify-content-between">
+    <h3 id="h1-show" class="px-2"><%= @offer.bar.name %></h3>
+    <div class="info-show d-flex justify-content-between px-2">
       <p class="offer-show"><i class="fas fa-tag"></i><%= @offer.description %></p>
       <p><i class="fas fa-city fa-purple"></i><%= @offer.bar.location %></p>
   </div>
@@ -51,7 +51,7 @@
 
 
   <div id="map"
-       style="width: 100%; height: 600px;"
+       style="width: 100%; height: 300px;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
    </div>
