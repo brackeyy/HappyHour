@@ -1,6 +1,6 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: rgba(0, 0, 0, 0.9);
+  justify-content: space-evenly;
+  background: rgba(31,31,31, 1);
   position: sticky;
   top: 0;
   z-index: 10000;
@@ -45,11 +45,8 @@
   .navbar-desktop {
     display: none;
   }
-  .navbar-brand {
-    width: 50%;
-  }
   .navbar-lewagon .navbar-brand img {
-    width: 40px;
+    width: 60px;
   }
   .navbar {
     z-index: 1000;

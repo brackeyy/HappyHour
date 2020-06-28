@@ -8,7 +8,7 @@ a { color: white; text-decoration: none; }
 .arrow {
   position: absolute;
   bottom: 50px;
-  right: 30%;
+  right: 46%;
   text-align: center;
   margin: 8% 0;
 }
@@ -23,10 +23,10 @@ a { color: white; text-decoration: none; }
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
   }
   60% {
-    transform: translateY(-15px);
+    transform: translateY(-10px);
   }
 }
 // Specific CSS for your home-page

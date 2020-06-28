@@ -29,8 +29,12 @@
   <div class="header-show">
     <h3 id="h1-show" class="px-2"><%= @offer.bar.name %></h3>
     <div class="info-show d-flex justify-content-between px-2">
-      <p class="offer-show"><i class="fas fa-tag"></i><%= @offer.description %></p>
-      <p><i class="fas fa-city fa-purple"></i><%= @offer.bar.location %></p>
+      <div class="twothird">
+        <p class="offer-show"><i class="fas fa-tag"></i><%= @offer.description %></p>
+      </div>
+      <div class="onethird">
+        <p><i class="fas fa-city fa-purple"></i><%= @offer.bar.location %></p>
+      </div>
   </div>
 
   <div>
