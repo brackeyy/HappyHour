@@ -31,7 +31,7 @@
     <div class="scrolling-wrapper new-listings my-4">
       <%@offers.each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
-              <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                 <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <i class="far fa-heart"></i>
               </div>
@@ -47,7 +47,7 @@
     <div class="scrolling-wrapper new-listings my-4">
       <%@offers[2,5].each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
-              <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                 <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <i class="far fa-heart"></i>
               </div>
@@ -63,7 +63,7 @@
     <div class="scrolling-wrapper new-listings my-4">
       <%@offers[3,5].each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
-              <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                 <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <i class="far fa-heart"></i>
               </div>
