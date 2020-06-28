@@ -4,7 +4,7 @@
       <%@offers.each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link col-12 col-md-6 col-lg-4 mt-4" do %>
             <div class="card-offer">
-              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.30)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                 <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <i class="far fa-heart"></i>
               </div>
