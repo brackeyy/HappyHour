@@ -3,7 +3,7 @@
     <!--<div class="container">-->
       <div class="content">
         <%= cl_image_tag "drawingdrinking",  crop: :fill, width: 400, class: "image-homepage"%>
-        <h1 class="h1-homepage">Happy hour every hour!</h1>
+        <h2 class="h1-homepage">Happy hour every hour!</h2>
         <p class="lead text">Find affordable drinks and nice bars near you!</p>
         <p>
           <form novalidate="novalidate" class="simple_form search md-form active-purple active-purple-2 mb-3" action="/offers?city=Barcelona" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
@@ -20,12 +20,15 @@
             </div>
           </form>
         </p>
+        <div class="arrow bounce">
+          <a class="fa fa-chevron-down fa-2x" href="#"></a>
+        </div>
 
       </div>
   </section>
   <!--<div class="container"> %>-->
-    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>Recent offers</strong></h2>
-    <div class="scrolling-wrapper new-listings">
+    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>🕑 Recent offers</strong></h2>
+    <div class="scrolling-wrapper new-listings my-4">
       <%@offers.each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
               <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
@@ -40,8 +43,8 @@
         <%end%>
       <%end%>
     </div>
-    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>Staff picks</strong></h2>
-    <div class="scrolling-wrapper new-listings">
+    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>💃🏼 Staff picks</strong></h2>
+    <div class="scrolling-wrapper new-listings my-4">
       <%@offers[2,5].each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
               <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
@@ -56,8 +59,8 @@
         <%end%>
       <%end%>
     </div>
-    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>Most popular</strong></h2>
-    <div class="scrolling-wrapper new-listings">
+    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>🔥 Most popular</strong></h2>
+    <div class="scrolling-wrapper new-listings my-4">
       <%@offers[3,5].each do |offer|%>
         <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
               <div class="card-image-category" style="background-image: url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
@@ -73,31 +76,60 @@
       <%end%>
     </div>
     <br>
-  <!--</div>-->
-  <h1 class="title-new-listings container text-center" style="padding: 15px;"><strong>How it works:</strong></h1>
-  <br>
-  <div class="container">
-    <div class="explanation">
-      <%= cl_image_tag "11_ofrqcd",  crop: :fill, width: 400, class: "image-homepage"%>
-      <p class="lead text text-center my-4">There are already numerous available bars in your neighbourhood - just enter your location and let's go!</p>
-    </div>
-    <br>
-    <div class="explanation">
-      <%= cl_image_tag "12_tcjg8l",  crop: :fill, width: 400, class: "image-homepage"%>
-      <p class="lead text text-center my-4">Choose from a great diversity of attractive offers and find the favourite discount for you and your friends!</p>
-    </div>
-    <br>
-    <div class="explanation">
-      <%= cl_image_tag "13_sq3dvx",  crop: :fill, width: 400, class: "image-homepage"%>
-      <p class="lead text text-center my-4">Booking an offer is as simple as it can be. Just book it and receive the valid QR code to claim your discount.</p>
-    </div>
-    <br>
-    <div class="explanation">
-      <%= cl_image_tag "14_zlge2c",  crop: :fill, width: 400, class: "image-homepage"%>
-      <p class="lead text text-center my-4">Now nothing gets in your way anymore. Just enjoy the night out and have a great time.</p>
-      <%= cl_image_tag 123456789,  crop: :fill, width: 100, class: "home-logo"  %>
-      <h5 class=" text-center my-4"><strong>Happy Hour, Every Hour!</strong></h5>
-    </div>
-    <%= link_to "Got it!", root_path, class: "btn button-offer", style: "margin: 0 auto; display: block" %>
+
+      <!-- This following part could be displayed to USERS when they enter the homepage -->
+      <h1 class="title-new-listings container text-center" style="padding: 15px;"><strong>How it works:</strong></h1>
+      <br>
+      <div class="container">
+        <div class="explanation">
+          <%= cl_image_tag "11_ofrqcd",  crop: :fill, width: 400, class: "image-homepage"%>
+          <p class="lead text text-center my-4">There are already numerous available bars in your neighbourhood - just enter your location and let's go!</p>
+        </div>
+        <br>
+        <div class="explanation">
+          <%= cl_image_tag "12_tcjg8l",  crop: :fill, width: 400, class: "image-homepage"%>
+          <p class="lead text text-center my-4">Choose from a great diversity of attractive offers and find the favourite discount for you and your friends!</p>
+        </div>
+        <br>
+        <div class="explanation">
+          <%= cl_image_tag "13_sq3dvx",  crop: :fill, width: 400, class: "image-homepage"%>
+          <p class="lead text text-center my-4">Booking an offer is as simple as it can be. Just book it and receive the valid QR code to claim your discount.</p>
+        </div>
+        <br>
+        <div class="explanation">
+          <%= cl_image_tag "14_zlge2c",  crop: :fill, width: 400, class: "image-homepage"%>
+          <p class="lead text text-center my-4">Now nothing gets in your way anymore. Just enjoy the night out and have a great time.</p>
+          <%= cl_image_tag 123456789,  crop: :fill, width: 100, class: "home-logo"  %>
+          <h5 class=" text-center my-4"><strong>Happy Hour, Every Hour!</strong></h5>
+        </div>
+        <%= link_to "Got it!", root_path, class: "btn button-offer", style: "margin: 0 auto; display: block" %>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <!-- This following part could be displayed to BAR OWNERS when they enter the homepage -->
+      <h1 class="title-new-listings container text-center" style="padding: 15px;"><strong>How it works:</strong></h1>
+      <br>
+      <div class="container">
+        <div class="explanation">
+          <%= cl_image_tag "21_tsyv1b",  crop: :fill, width: 400, class: "image-homepage"%>
+          <p class="lead text text-center my-4">Choose between our free, silver and gold plan to get started.</p>
+        </div>
+        <br>
+        <div class="explanation">
+          <%= cl_image_tag "22_hlyxdm",  crop: :fill, width: 400, class: "image-homepage"%>
+          <p class="lead text text-center my-4">Upload an offer to attract more customers instantly. Anytime you like!</p>
+        </div>
+        <br>
+        <div class="explanation">
+          <%= cl_image_tag "e01xs89hmmaeylxhxxj50xfplw55",  crop: :fill, width: 400, class: "image-homepage"%>
+          <p class="lead text text-center my-4">Benefit from a stronger customer engagement and overall higher profits.</p>
+          <%= cl_image_tag 123456789,  crop: :fill, width: 100, class: "home-logo"  %>
+          <h5 class=" text-center my-4"><strong>Happy Hour, Every Hour!</strong></h5>
+        </div>
+        <%= link_to "Got it!", root_path, class: "btn button-offer", style: "margin: 0 auto; display: block" %>
+
+
   </div>
 </main>
