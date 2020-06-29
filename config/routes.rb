@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
 get '/dashboard', to: 'dashboards#show'
+get '/map', to: 'maps#index'
 get '/subscriptions', to: 'subscriptions#index'
 resources :orders, only: [:show, :create] do
   resources :payments, only: :new

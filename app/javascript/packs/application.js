@@ -25,7 +25,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 // External imports
 import "bootstrap";
-
+import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initCountdown } from '../plugins/init_countdown';
 import { distanceCalculation } from '../components/distance_calculation';
@@ -54,5 +54,5 @@ function progress(timeleft, timetotal, $element) {
 // progress((@offer.end_time - DateTime.now), (@offer.end_time - DateTime.now), $('#progressBar'));
 progress(180, 180, $('#progressBar'));
 
-
+initAutocomplete();
 
