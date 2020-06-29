@@ -1,12 +1,12 @@
 .button-offer {
   background: $purple;
   color: white;
-  padding: 8px 24px;
+  padding: 8px 20px;
   border-radius: 50px;
   font-weight: lighter;
   margin-top: 15px;
   transition: opacity 0.3s ease;
-  width: 200px;
+  width: 150px;
   &:hover{
     opacity: 0.7;
     color: white;

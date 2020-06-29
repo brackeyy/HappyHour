@@ -4,6 +4,7 @@ before_action :find_bar, only: [:show, :edit, :update, :destroy]
 
   # @bars = Bar.geocoded # returns bars with coordinates
 
+
 def show
 
   @markers =
