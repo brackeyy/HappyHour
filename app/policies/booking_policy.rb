@@ -13,4 +13,8 @@ class BookingPolicy < ApplicationPolicy
     user
   end
 
+  def confirm?
+    record.offer.bar.user.id == user.id
+  end
+
 end

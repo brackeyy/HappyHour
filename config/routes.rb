@@ -8,7 +8,12 @@ Rails.application.routes.draw do
     resources :offers, only:[:create, :new]
   end
   resources :offers, only: [:index, :show, :destroy, :edit, :update] do
-    resources :bookings, only: [:create, :index, :show]
+    resources :bookings, only: [:create, :index, :show] do
+      member do
+        get "confirm", to: 'bookings#confirm'
+      end
+
+    end
   end
 get '/dashboard', to: 'dashboards#show'
 get '/subscriptions', to: 'subscriptions#index'
