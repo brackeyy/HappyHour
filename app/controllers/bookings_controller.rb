@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
 
     @code = @booking.code
 
-    @qrcode = RQRCode::QRCode.new(@code)
+    @qrcode = RQRCode::QRCode.new("http://happi-hour.herokuapp.com/offers/#{@offer.id}/bookings/#{@booking.id}/confirm")
 
     @svg = @qrcode.as_svg(
       offset: 0,
@@ -30,6 +30,13 @@ class BookingsController < ApplicationController
       lng: @offer.bar.longitude
     }]
 
+  end
+
+  def confirm
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.claimed = true
+    @booking.save!
   end
 
   def create
