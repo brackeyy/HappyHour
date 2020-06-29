@@ -17,7 +17,7 @@
                 %>
                 <%= link_to "Explore", "/offers?query=#{params[:query]}", class: "btn button-offer"%>
               <% end %>
-              
+
             </div>
           </form>
         </p>
@@ -100,58 +100,40 @@
     </div>
     <br>
 
-      <!-- This following part could be displayed to USERS when they enter the homepage -->
-      <h1 class="title-new-listings container text-center" style="padding: 15px;"><strong>How it works:</strong></h1>
-      <br>
-      <div class="container">
-        <div class="explanation">
-          <%= cl_image_tag "11_ofrqcd",  crop: :fill, width: 400, class: "image-homepage"%>
-          <p class="lead text text-center my-4">There are already numerous available bars in your neighbourhood - just enter your location and let's go!</p>
-        </div>
-        <br>
-        <div class="explanation">
-          <%= cl_image_tag "12_tcjg8l",  crop: :fill, width: 400, class: "image-homepage"%>
-          <p class="lead text text-center my-4">Choose from a great diversity of attractive offers and find the favourite discount for you and your friends!</p>
-        </div>
-        <br>
-        <div class="explanation">
-          <%= cl_image_tag "13_sq3dvx",  crop: :fill, width: 400, class: "image-homepage"%>
-          <p class="lead text text-center my-4">Booking an offer is as simple as it can be. Just book it and receive the valid QR code to claim your discount.</p>
-        </div>
-        <br>
-        <div class="explanation">
-          <%= cl_image_tag "14_zlge2c",  crop: :fill, width: 400, class: "image-homepage"%>
-          <p class="lead text text-center my-4">Now nothing gets in your way anymore. Just enjoy the night out and have a great time.</p>
-          <%= cl_image_tag 123456789,  crop: :fill, width: 100, class: "home-logo"  %>
-          <h5 class=" text-center my-4"><strong>Happy Hour, Every Hour!</strong></h5>
-        </div>
-        <%= link_to "Got it!", root_path, class: "btn button-offer", style: "margin: 0 auto; display: block" %>
-        <br>
-        <br>
-        <br>
+  <h1 class="title-new-listings container text-center" style="padding: 15px;"><strong>How it works</strong></h1>
+  <br>
+
+
+  <div class="toggler-section">
+
+    <div class="mid mb-4 px-5">
+      <div class="toggle-head">
+        For Users
       </div>
 
-      <!-- This following part could be displayed to BAR OWNERS when they enter the homepage -->
-      <h1 class="title-new-listings container text-center" style="padding: 15px;"><strong>How it works:</strong></h1>
-      <br>
-      <div class="container">
-        <div class="explanation">
-          <%= cl_image_tag "21_tsyv1b",  crop: :fill, width: 400, class: "image-homepage"%>
-          <p class="lead text text-center my-4">Choose between our free, silver and gold plan to get started.</p>
+      <div class="toggle-button">
+        <div class="ball">
+          <div class="ball-logo">
+          </div>
         </div>
-        <br>
-        <div class="explanation">
-          <%= cl_image_tag "22_hlyxdm",  crop: :fill, width: 400, class: "image-homepage"%>
-          <p class="lead text text-center my-4">Upload an offer to attract more customers instantly. Anytime you like!</p>
-        </div>
-        <br>
-        <div class="explanation">
-          <%= cl_image_tag "e01xs89hmmaeylxhxxj50xfplw55",  crop: :fill, width: 400, class: "image-homepage"%>
-          <p class="lead text text-center my-4">Benefit from a stronger customer engagement and overall higher profits.</p>
-          <%= cl_image_tag 123456789,  crop: :fill, width: 100, class: "home-logo"  %>
-          <h5 class=" text-center my-4"><strong>Happy Hour, Every Hour!</strong></h5>
-        </div>
-        <%= link_to "Got it!", root_path, class: "btn button-offer", style: "margin: 0 auto; display: block" %>
+      </div>
+
+      <div class="toggle-head">
+        For Bars
+      </div>
+    </div>
+    <br>
+
+    <div class="home-tab element left sides active">
+      <%= render 'shared/user_how_it_works' %>
+    </div>
+
+
+    <div class="home-tab element right sides">
+      <%= render 'shared/owner_how_it_works' %>
+    </div>
+
+  </div>
 
 
   </div>

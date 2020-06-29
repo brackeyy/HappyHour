@@ -30,3 +30,12 @@ a { color: white; text-decoration: none; }
   }
 }
 // Specific CSS for your home-page
+// toggle switch
+
+
+.home-tab {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
