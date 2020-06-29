@@ -2,7 +2,7 @@
 <div class="form-inputs">
     <%= simple_form_for(@bar) do |f| %>
     <%= f.input :name %>
-    <%= f.input :location %>
+    <%= f.input :location, id: "flat-address" %>
     <%= f.input :description %>
     <%= f.input :photos, as: :file, hint: 'Upload multiple pictures', input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Upload a photo' %>
     <div class="button-centered"><%= f.submit class: 'btn button-dark' %></div>
