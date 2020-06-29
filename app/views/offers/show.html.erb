@@ -10,7 +10,7 @@
               <!-- <img src="..." class="d-block w-100" alt="Flat photo"> -->
               <% if @offer.end_time > DateTime.now  %>
                   <% if @offer.end_time > DateTime.now &&  DateTime.now > @offer.start_time %>
-                    <p class="badge-offer badge-offer-show end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
+                    <p class="badge-offer badge-offer-show end-time-index countdown"  data-end-time="<%= @offer.end_time %>"></p>
                   <% else @offer.start_time > DateTime.now  %>
                     <p class="badge-offer badge-offer-show end-time-index"> <strong> Offer did not start yet. </strong></p>
                   <% end %>
