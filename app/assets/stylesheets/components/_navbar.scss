@@ -1,5 +1,5 @@
 .navbar-lewagon {
-  justify-content: space-evenly;
+  justify-content: space-around;
   background: rgba(31,31,31, 1);
   position: sticky;
   top: 0;
@@ -29,6 +29,13 @@
   }
 }
 
+.navbar-light .navbar-toggler {
+  color: $purple;
+}
+.navbar-nav {
+  align-items: center;
+}
+
 .navbar-lewagon-white {
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 2;
@@ -43,6 +50,18 @@
 
 @media screen and (max-width: 740px) {
   .navbar-desktop {
+    display: none;
+  }
+  .navbar-lewagon .navbar-brand img {
+    width: 60px;
+  }
+  .navbar {
+    z-index: 1000;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  .navbar-mobile {
     display: none;
   }
   .navbar-lewagon .navbar-brand img {

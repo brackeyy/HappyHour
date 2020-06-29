@@ -15,8 +15,9 @@
                   class: "form-control",
                   placeholder: "Enter your city"
                 %>
+                <%= link_to "Explore", "/offers?query=#{params[:query]}", class: "btn button-offer"%>
               <% end %>
-              <%= link_to "Explore", offers_path, class: "btn button-offer"%>
+              
             </div>
           </form>
         </p>
