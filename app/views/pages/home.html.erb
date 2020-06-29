@@ -35,10 +35,8 @@
                 <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                   <% if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time %>
                     <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
-                  <% elsif offer.start_time > DateTime.now  %>
+                  <% else offer.start_time > DateTime.now  %>
                     <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
-                  <% else %>
-                    <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
                   <% end %>
                   <i class="far fa-heart"></i>
                 </div>
@@ -47,14 +45,8 @@
                 <p><%=offer.bar.name.truncate(10)%></p>
               </div>
             <% else %>
-              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.50), rgba(255, 255, 255, 0.50)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                  <% if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time %>
-                    <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
-                  <% elsif offer.start_time > DateTime.now  %>
-                    <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
-                  <% else %>
-                    <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
-                  <% end %>
+              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(0,0,0, 0.80), rgba(0,0,0, 0.80)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+                    <p class="badge-expired end-time-index"> <strong> Offer expired. </strong></p>
                   <i class="far fa-heart"></i>
                 </div>
               <div class="card-desc">
