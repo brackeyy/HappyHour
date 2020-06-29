@@ -60,6 +60,14 @@
 }
 .toggle-head{
   font-size: 16px;
+  border: 1px solid white;
+  border-radius: 2px;
+  padding: 5px 10px;
+  opacity: 0.6;
+  &.opacity {
+  opacity: 1;
+  transition: 0.5s;
+  }
 }
 .mid{
   display: flex;
