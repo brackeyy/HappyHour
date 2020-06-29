@@ -32,30 +32,29 @@
           <h4><strong>531.60</strong></h4>
         </div>
       </div>
-      <h3 class="text-center mt-5"><strong>Your bookings</strong></h3>
+
+
+      <h3 class="text-center mt-5"><strong>Your bars</strong></h3>
       <br>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Bar</th>
-            <th scope="col">Offer</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <%@bookings.order("created_at desc").each do |booking|%>
-            <tr>
-            <td><%= booking.offer.bar.name %></td>
-            <td><%= booking.offer.description%></td>
-            <% if booking.offer.expired %>
-              <td>expired</td>
-            <% else %>
-              <td>active</td>
-            <% end %>
-            </tr>
+
+      <div class ="row">
+        <%@bars.each do |bar|%>
+          <%=link_to bar_path(bar), class: "card-link col-12 col-md-6 col-lg-4 mt-4" do %>
+              <div class="card-offer">
+                <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path bar.photos.first.key, crop: :fill%>')">
+                </div>
+                <div class="card-desc">
+                  <div class="right">
+                    <p class="p-cards"><%= bar.name.truncate(10) %></p>
+                  </div>
+                </div>
+              </div>
           <%end%>
-        </tbody>
-      </table>
+        <%end%>
+      </div>
+
+
+
 
     <% else %>
 
