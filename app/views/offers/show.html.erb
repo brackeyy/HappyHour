@@ -49,17 +49,7 @@
       <h2></h2>
       <h2 id= title><%#= @offer.bar.name %></h2>
       <%= link_to "Claim", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-book" %>
-      <p>Offer expires in:</p>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <% if @offer.end_time > DateTime.now &&  DateTime.now > @offer.start_time %>
-        <div id="progressBar">
-          <div></div>
-        </div>
-      <% elsif @offer.start_time > DateTime.now  %>
-        <p class="border text-center"> <strong> Offer did not start yet. </strong></p>
-      <% else %>
-        <p class="border text-center"> <strong> Offer expired. </strong></p>
-      <% end %>
+
 
     <div class="button-offer-container">
       <%= link_to 'Delete', offer_path(@offer), method: :delete, class: "btn button-offer" if current_user == @offer.bar.user  %>
