@@ -41,7 +41,8 @@
   </div>
   <br>
 
-<h3 class="text-center mt-5"><strong>Your offers on this bar</strong></h3>
+<h3 class="text-center mt-5">Your offers on</h3>
+<h3 class="text-center"><strong><%= @bar.name %></strong> </h3>
       <br>
    <div class ="row">
         <%current_user.offers.each do |offer|%>
@@ -49,10 +50,20 @@
               <div class="card-offer">
                 <div class="card-desc">
 
-                    <div class= "mb-3">
-                      <i class="fas fa-tag mb-3"></i><%= offer.description %>
-                      <p><%= offer.start_time.strftime("Starts on %B %d, %Y at %H:%M") %></p>
-                      <p><%= offer.end_time.strftime("Ends on %B %d, %Y at %H:%M") %></p></p>
+                    <div >
+                      <i class="fas fa-tag mb-3"></i><strong> <%= offer.description  %></strong>
+                      <div class="d-flex">
+
+                        <div class="px-4">
+                          <p>Start:</p>
+                          <p>End:</p>
+                        </div>
+                        <div>
+                          <p><%= offer.start_time.strftime("%B %d, %Y at %H:%M") %></p>
+                          <p><%= offer.end_time.strftime("%B %d, %Y at %H:%M") %></p></p>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                 </div>
