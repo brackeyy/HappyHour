@@ -31,7 +31,7 @@ import { initCountdown } from '../plugins/init_countdown';
 import { distanceCalculation } from '../components/distance_calculation';
 import { toggleHomePageButton } from '../components/toggle';
 import  Swal  from 'sweetalert2'
-import "../plugins/flatpickr"
+import { calendar } from "../plugins/flatpickr"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -58,6 +58,7 @@ document.addEventListener('turbolinks:load', () => {
   distanceCalculation();
   toggleHomePageButton();
   sweetalert();
+  calendar();
   // initUpdateNavbarOnScroll();
 })
 

@@ -1,5 +1,15 @@
 import flatpickr from "flatpickr";
 
-flatpickr(".datepicker", {enableTime: true,
-    dateFormat: "Y-m-d H:i", time_24hr: true});
-
+const calendar = () => {
+  const inputs = document.querySelectorAll('.datepicker')
+  if (inputs) {
+    inputs.forEach((input)=>{
+      flatpickr(inputs, {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        time_24hr: true
+      });
+    })
+  }
+}
+  export { calendar }
