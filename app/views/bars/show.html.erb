@@ -36,8 +36,8 @@
     </div>
   </div>
   <div class="bar-buttons d-flex justify-content-around">
-    <%= link_to 'Delete my bar', bar_path(@bar), class: "btn button-offer", method: :delete if current_user == @bar.user %>
-    <%= link_to "Add an offer", new_bar_offer_path(@bar), class: "btn button-offer" if current_user == @bar.user %>
+    <%= link_to 'Delete my bar', bar_path(@bar), class: "btn button-edit", method: :delete if current_user == @bar.user %>
+    <%= link_to "Add an offer", new_bar_offer_path(@bar), class: "btn button-edit" if current_user == @bar.user %>
   </div>
   <br>
 
