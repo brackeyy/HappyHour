@@ -2,11 +2,11 @@
 </div>
 <div class="container">
   <h2>Upload a new offer:</h2>
-  <div class="form-inputs">
+  <div class="form-wrapper">
     <%= simple_form_for([@bar, @offer]) do |f| %>
     <%= f.input :description %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
+    <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
     <div class="button-centered"><%= f.submit class: 'btn button-dark' %></div>
     <% end %>
   </div>
