@@ -105,6 +105,7 @@
               <% else %>
                 <td>active</td>
               <% end %>
+              <td><%=link_to "Show QR Code", "/offers/#{booking.offer_id}/bookings/#{booking.id}"%></td>
               </tr>
             <%end%>
           </tbody>
