@@ -1,12 +1,12 @@
 class MapsController < ApplicationController
   def index
     @bars = policy_scope(Bar.geocoded) # returns flats with coordinates
-  
-    @markers = @bars.map do |bar|
+    @offers = Offer.all
+    @markers = @offers.map do |offer|
       {
-        lat: bar.latitude,
-        lng: bar.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { bar: bar })
+        lat: offer.bar.latitude,
+        lng: offer.bar.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { offer: offer })
       }
     end
   end

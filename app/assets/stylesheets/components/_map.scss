@@ -1,0 +1,14 @@
+.map-info {
+  color: black;
+  h1 {
+    font-size: 1.4rem;
+  }
+  a {
+    color: $purple;
+  }
+  background-size: cover;
+}
+
+.mapboxgl-popup-content {
+  padding: 0px!important;
+}

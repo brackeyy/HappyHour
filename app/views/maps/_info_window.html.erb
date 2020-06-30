@@ -1,4 +1,7 @@
-<h2><%= bar.name %></h2>
-<p >hello</p>
-<p><%= bar.location %></p>
-<p style="color: black"<%= bar.offer&.description %></p>
+
+<div class="map-info" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+  <h2><%= offer.bar.name.truncate(15) %></h2>
+  <p><%= offer.bar.location %></p>
+  <%=offer.description%>
+  <%=link_to "More info", offer_path(offer)%>
+</div>
