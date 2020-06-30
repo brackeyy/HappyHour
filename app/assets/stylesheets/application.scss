@@ -12,6 +12,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'mapbox-gl/dist/mapbox-gl';
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 @import "flatpickr/dist/flatpickr";
 
 
@@ -55,5 +56,4 @@ main {
   padding: 0px 20px;
 }
 
-@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
