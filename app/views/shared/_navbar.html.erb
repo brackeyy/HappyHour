@@ -46,7 +46,7 @@
           <li class="nav-item dropdown">
             <%= cl_image_tag "image-removebg-preview_if8ep2", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "My bookings", "#", class: "nav-link" %>
+              <%= link_to "My bookings", "#", class: "nav-link" unless current_user.owner %>
               <%= link_to "Add a bar", "/bars/new", class: "nav-link" if current_user.owner %>
               <!-- Bar owner -->
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
