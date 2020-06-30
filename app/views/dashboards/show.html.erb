@@ -9,7 +9,7 @@
       <div class="stats">
         <div class="total-orders text-center">
           <p>Total number of offers: </p>
-          <h4><strong><%=@offers.count%></strong></h4>
+          <h4><strong><%=current_user.offers.count%></strong></h4>
         </div>
         <div class="total-orders text-center">
           <p>Booked codes: </p>
@@ -52,6 +52,9 @@
           <%end%>
         <%end%>
       </div>
+
+
+
 
 
 
