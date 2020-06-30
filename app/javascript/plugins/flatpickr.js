@@ -7,7 +7,8 @@ const calendar = () => {
       flatpickr(inputs, {
         enableTime: true,
         dateFormat: "Y-m-d H:i",
-        time_24hr: true
+        time_24hr: true,
+        disableMobile: true
       });
     })
   }
