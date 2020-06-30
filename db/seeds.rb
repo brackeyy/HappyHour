@@ -53,7 +53,7 @@ bar1.save!
 
 #2
 file2 = URI.open('https://www.in-muenchen.de/bilder/2020/02/06/13526864/1562010690-contemporary-bar-muenchen-1bk4Wgxea.jpg')
-bar2 = Bar.new(user: user1, name: 'Reineke Fuchs', location: "Carrer de València 26, Barcelona", description: "The top floor Monkey Bar with panoramic view and perfect sundowner terrace is the hot spot after dusk. An international choice of drinks and fine wine as well as bar snacks from the NENI kitchen are served. Regular DJ lines and live music events take place at the Monkey Bar. The bar can be booked exclusively upon request and has a direct express lift from street level.")
+bar2 = Bar.new(user: user1, name: 'Reineke Fuchs', location: "Carrer de València 260, Barcelona", description: "The top floor Monkey Bar with panoramic view and perfect sundowner terrace is the hot spot after dusk. An international choice of drinks and fine wine as well as bar snacks from the NENI kitchen are served. Regular DJ lines and live music events take place at the Monkey Bar. The bar can be booked exclusively upon request and has a direct express lift from street level.")
 bar2.photos.attach(io: file2, filename: 'bar2.png', content_type: 'image/png')
 bar2.save!
 #3
@@ -73,7 +73,7 @@ bar5.photos.attach(io: handle_string_io_as_file(file5, 'bar5.png'), filename: 'b
 bar5.save!
 #6
 file6 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/08/2c/a7/13/cloud-9-sky-bar-lounge.jpg')
-bar6 = Bar.new(user: user2, name: 'TripleA', location: "Carrer de Nàpols 15, Barcelona", description: "The top floor Monkey Bar with panoramic view and perfect sundowner terrace is the hot spot after dusk. An international choice of drinks and fine wine as well as bar snacks from the NENI kitchen are served. Regular DJ lines and live music events take place at the Monkey Bar. The bar can be booked exclusively upon request and has a direct express lift from street level.")
+bar6 = Bar.new(user: user2, name: 'TripleA', location: "Carrer de Nàpols 150, Barcelona", description: "The top floor Monkey Bar with panoramic view and perfect sundowner terrace is the hot spot after dusk. An international choice of drinks and fine wine as well as bar snacks from the NENI kitchen are served. Regular DJ lines and live music events take place at the Monkey Bar. The bar can be booked exclusively upon request and has a direct express lift from street level.")
 bar6.photos.attach(io: file6, filename: 'bar6.png', content_type: 'image/png')
 bar6.save!
 #7
@@ -83,7 +83,7 @@ bar7.photos.attach(io: file7, filename: 'bar7.png', content_type: 'image/png')
 bar7.save!
 #8
 file8 = URI.open('https://www.empire-riverside.de/site/assets/files/10619/skylinebar20upnightview_empireriversidehotel.2560x1600.jpg')
-bar8 = Bar.new(user: user3, name: 'Yuca', location: "Carrer de Joan d'Àustria 9, Barcelona", description: "The top floor Monkey Bar with panoramic view and perfect sundowner terrace is the hot spot after dusk. An international choice of drinks and fine wine as well as bar snacks from the NENI kitchen are served. Regular DJ lines and live music events take place at the Monkey Bar. The bar can be booked exclusively upon request and has a direct express lift from street level.")
+bar8 = Bar.new(user: user3, name: 'Yuca', location: "Carrer de Joan d'Àustria 170, Barcelona", description: "The top floor Monkey Bar with panoramic view and perfect sundowner terrace is the hot spot after dusk. An international choice of drinks and fine wine as well as bar snacks from the NENI kitchen are served. Regular DJ lines and live music events take place at the Monkey Bar. The bar can be booked exclusively upon request and has a direct express lift from street level.")
 bar8.photos.attach(io: file8, filename: 'bar8.png', content_type: 'image/png')
 bar8.save!
 

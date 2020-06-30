@@ -25,7 +25,7 @@ const addMarkersToMap = (map, markers) => {
   element.className = 'marker';
   element.style.backgroundImage = `url('${marker.image_url}')`;
   element.style.backgroundSize = 'cover';
-  element.style.width = '25px';
+  element.style.width = '26px';
   element.style.height = '37px';
 
     new mapboxgl.Marker(element)
