@@ -27,13 +27,17 @@
   <div class="header-show">
     <h1 id="h1-show"><%=@bar.name %></h1>
     <div class="info-show d-flex justify-content-around">
-      <p><i class="fas fa-tag"></i><%= @bar.description %></p>
-      <p><i class="fas fa-city fa-purple"></i><%= @bar.location %></p>
+      <div class="align-lefty">
+        <p><i class="fas fa-tag "></i><%= @bar.description %></p>
+      </div>
+      <div class="align-righty">
+        <p><i class="fas fa-city fa-purple "></i><%= @bar.location %></p>
+      </div>
     </div>
   </div>
   <div class="bar-buttons d-flex justify-content-around">
-    <%= link_to 'Delete my bar', bar_path(@bar), class: "btn button-dark", method: :delete if current_user == @bar.user %>
-    <%= link_to "Add an offer", new_bar_offer_path(@bar), class: "btn button-dark" if current_user == @bar.user %>
+    <%= link_to 'Delete my bar', bar_path(@bar), class: "btn button-offer", method: :delete if current_user == @bar.user %>
+    <%= link_to "Add an offer", new_bar_offer_path(@bar), class: "btn button-offer" if current_user == @bar.user %>
   </div>
   <br>
 
@@ -43,7 +47,7 @@
 
 
   <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 100%; height: 300px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
