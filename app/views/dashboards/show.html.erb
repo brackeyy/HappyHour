@@ -1,6 +1,11 @@
 
 <div class="container">
   <% if current_user %>
+
+      <% if @sweetalert %>
+        <div class="sweetalert"></div>
+      <% end %>
+
     <% if current_user.owner %>
       <h1 class="text-center my-5"><strong>Want more?</strong></h1>
       <%= link_to "Get Premium", subscriptions_path, class: "btn  button-offer", style: "margin: 0 auto; display: block"   %>

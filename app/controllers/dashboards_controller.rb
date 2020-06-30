@@ -6,6 +6,7 @@ class DashboardsController < ApplicationController
     @bars = current_user.bars
     # @bars = @bars.where(current_user == @bar.user)
     authorize @bookings
+    @sweetalert = false
   end
 
 end

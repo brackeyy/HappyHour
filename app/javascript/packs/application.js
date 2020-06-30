@@ -30,15 +30,32 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initCountdown } from '../plugins/init_countdown';
 import { distanceCalculation } from '../components/distance_calculation';
 import { toggleHomePageButton } from '../components/toggle';
+import  Swal  from 'sweetalert2'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 // import { initUpdateNavbarOnScroll } from '../components/navbar';
+
+
+
+function sweetalert() {
+  const confirmationBox = document.querySelector(".sweetalert")
+  if (confirmationBox) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Your payment was successful.',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+}
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initCountdown();
   distanceCalculation();
   toggleHomePageButton();
+  sweetalert();
   // initUpdateNavbarOnScroll();
 })
 
@@ -57,4 +74,5 @@ function progress(timeleft, timetotal, $element) {
 progress(180, 180, $('#progressBar'));
 
 initAutocomplete();
+
 

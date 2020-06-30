@@ -8,6 +8,8 @@ def handle_string_io_as_file(io, filename)
   file.open
 end
 
+Order.destroy_all
+Payment.destroy_all
 Booking.destroy_all
 Offer.destroy_all
 Bar.destroy_all

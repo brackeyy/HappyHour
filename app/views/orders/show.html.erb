@@ -1,12 +1,26 @@
 <div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-      <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-        <li><strong>SUBSCRIPTION</strong> <%= @order.subscription.name %> [<%= @order.subscription_sku %>]</li>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
-      </ul>
+
+  <h1 class="text-center">Order #<%= @order.id %>
+  <br>
+
+  <div class="d-flex  px-4">
+
+    <div>
+      <p ><strong>ISSUED ON:</strong> </p>
+      <p ><strong>SUBSCRIPTION:</strong>  </p>
+      <p ><strong>TOTAL:</strong></p>
     </div>
+
+    <div>
+      <p class="px-4"> <%= @order.created_at.to_date %></p>
+      <p class="px-4"> <%= @order.subscription.name %></p>
+      <p class="px-4"> <%= humanized_money_with_symbol @order.amount %></p>
+    </div>
+
   </div>
+
+  <%= link_to "Back", dashboard_path, class: "btn button-offer", id: "back" %>
+
+
+
 </div>
