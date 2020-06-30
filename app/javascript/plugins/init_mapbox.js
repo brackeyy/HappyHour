@@ -1,5 +1,5 @@
 import mapboxgl from 'mapbox-gl';
-
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -21,7 +21,14 @@ const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
-    new mapboxgl.Marker()
+    const element = document.createElement('div');
+  element.className = 'marker';
+  element.style.backgroundImage = `url('${marker.image_url}')`;
+  element.style.backgroundSize = 'cover';
+  element.style.width = '25px';
+  element.style.height = '37px';
+
+    new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup) // add this
       .addTo(map);
@@ -32,7 +39,7 @@ const fitMapToMarkers = (map, markers) => {
 
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0});
 };
 
 const initMapbox = () => {
@@ -56,7 +63,11 @@ const initMapbox = () => {
     map.on("load",()=> {
      fitMapToMarkers(map, markers);
     })
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl }));
   }
 };
+
+// [...]
 
 export { initMapbox };

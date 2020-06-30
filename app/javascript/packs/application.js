@@ -33,6 +33,7 @@ import { toggleHomePageButton } from '../components/toggle';
 import  Swal  from 'sweetalert2'
 import { calendar } from "../plugins/flatpickr"
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 // import { initUpdateNavbarOnScroll } from '../components/navbar';
@@ -46,7 +47,7 @@ function sweetalert() {
       icon: 'success',
       title: 'Your payment was successful.',
       showConfirmButton: false,
-      timer: 1500
+      timer: 3000
     })
   }
 }
