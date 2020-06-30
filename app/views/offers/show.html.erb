@@ -48,7 +48,7 @@
   <div>
       <h2></h2>
       <h2 id= title><%#= @offer.bar.name %></h2>
-      <%= link_to "Claim", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-book" if current_user.owner %>
+      <%= link_to "Claim", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-book" if !current_user.owner %>
 
 
     <div class="button-offer-container d-flex justify-content-between">
