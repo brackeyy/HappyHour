@@ -76,3 +76,23 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 #map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
   opacity: 0.9;
 }
+
+#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+  display:none;
+}
+
+#map > div.mapboxgl-popup.mapboxgl-popup-anchor-top {
+  display:none;
+}
+
+#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-bottom-left {
+  display:none;
+}
+
+#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-bottom-right {
+  display:none;
+}
+
+#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right {
+  justify-content: end;
+}
