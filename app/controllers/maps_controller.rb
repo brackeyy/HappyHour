@@ -5,9 +5,9 @@ class MapsController < ApplicationController
     @markers = @offers.map do |offer|
       {
         lat: offer.bar.latitude,
-        lng: offer.bar.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { offer: offer })
+        lng: offer.bar.longitude
       }
+
     end
   end
 end
