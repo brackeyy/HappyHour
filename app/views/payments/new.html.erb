@@ -1,9 +1,29 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.subscription.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+<div class="container text-center">
+      <h2>Checkout summary</h2>
+      <br>
+      <div class="card-offer card-subscription">
+        <div class="circle-silver"></div>
+          <% if @premium == 1 %>
+            <h4><%= @subscriptions[0].name %></h4>
+            <p><%=@subscriptions[0].description%></p>
+
+          <% elsif @premium == 2 %>
+
+            <h4><%= @subscriptions[1].name %></h4>
+            <p><%= @subscriptions[1].description%></p>
+
+          <% else %>
+
+            <h4><%= @subscriptions[2].name %></h4>
+            <p><%=@subscriptions[2].description%></p>
+
+          <% end %>
+      </div>
+      <br>
+      <h4>You want to switch to our <strong><%= @order.subscription.name %></strong> level?</h4>
+      <br>
+      <h4>Price: <strong><%= humanized_money_with_symbol @order.amount %></strong></h4>
+      <button id="pay" class="btn button-offer">Confirm</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
@@ -14,6 +34,4 @@
           });
         });
       </script>
-    </div>
-  </div>
 </div>

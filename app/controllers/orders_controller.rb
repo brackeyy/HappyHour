@@ -28,7 +28,20 @@ class OrdersController < ApplicationController
   def show
 
     @order = current_user.orders.find(params[:id])
+
     authorize @order
+    @offers = policy_scope(Offer)
+    @bookings = current_user.bookings
+    @bars = policy_scope(Bar)
+    @bars = current_user.bars
+    authorize @bookings
+
+    @premium = Order.find(params[:id]).subscription.premium
+    current_user.premium = @premium
+    current_user.save!
+    @sweetalert = true
+    render 'dashboards/show'
+
   end
 
 end

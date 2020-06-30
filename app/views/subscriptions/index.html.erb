@@ -27,7 +27,7 @@
         <div class="circle-gold"></div>
           <h2><%= @subscriptions[2].name %></h2>
           <p><%=@subscriptions[2].description%></p>
-          <% if current_user.premium == 2 %>
+          <% if current_user.premium == 3 %>
             <%=link_to "Active", "/orders?subscription_id=#{@subscriptions[2].id}", method: :post, class: "btn button-dark-active", style: "opacity: 0.5" %>
           <% else %>
             <%=link_to "Book", "/orders?subscription_id=#{@subscriptions[2].id}", method: :post, class: "btn button-dark" %>
