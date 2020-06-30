@@ -5,7 +5,9 @@ class MapsController < ApplicationController
     @markers = @offers.map do |offer|
       {
         lat: offer.bar.latitude,
-        lng: offer.bar.longitude
+        lng: offer.bar.longitude,
+        infoWindow: render_to_string(partial: "maps/info_window", locals: { offer: offer }),
+        image_url: helpers.asset_url('MARKER.png')
       }
 
     end
