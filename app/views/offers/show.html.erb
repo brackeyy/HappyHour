@@ -48,16 +48,14 @@
   <div>
       <h2></h2>
       <h2 id= title><%#= @offer.bar.name %></h2>
-      <%= link_to "Claim", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-book" %>
+      <%= link_to "Claim", "/offers/#{@offer.id}/bookings", method: :post, class: "btn button-book" if current_user == !@offer.bar.user %>
 
 
-    <div class="button-offer-container">
-      <%= link_to 'Delete', offer_path(@offer), method: :delete, class: "btn button-offer" if current_user == @offer.bar.user  %>
-      <%= link_to "Edit your offer", edit_offer_path(@offer), class: "btn button-offer" if current_user == @offer.bar.user %>
+    <div class="button-offer-container d-flex justify-content-between">
+      <%= link_to 'Delete', offer_path(@offer), method: :delete, class: "btn button-edit" if current_user == @offer.bar.user  %>
+      <%= link_to "Edit", edit_offer_path(@offer), class: "btn button-edit" if current_user == @offer.bar.user %>
     </div>
-
-
-
+  <br>
   <div id="map"
        style="width: 100%; height: 300px;"
        data-markers="<%= @markers.to_json %>"
