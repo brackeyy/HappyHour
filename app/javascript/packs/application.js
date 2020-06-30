@@ -46,7 +46,7 @@ function sweetalert() {
       icon: 'success',
       title: 'Your payment was successful.',
       showConfirmButton: false,
-      timer: 1500
+      timer: 3000
     })
   }
 }
