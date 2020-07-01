@@ -89,7 +89,7 @@
 
 
 .card-image-category {
-  padding: 10px 20px 100px 10px;
+  padding: 10px 20px 140px 10px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -119,7 +119,7 @@
 
 
   h2 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
     color: white;
     opacity: 0.9;
@@ -251,6 +251,8 @@ p#countdown.end-time-index {
   box-shadow: 2px 2px 10px #141414, -5px -5px 20px #2a2a2a;
 }
 
+
 .active-sub {
   border: 1px solid $purple;
 }
+
