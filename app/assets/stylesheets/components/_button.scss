@@ -38,6 +38,13 @@ input.btn.button-offer {
   }
 }
 
+@media screen and (min-width: 740px) {
+  .button-map {
+    right: 45%!important;
+    bottom: 5%!important;
+  }
+}
+
 .button-dark {
   background: #1f1f1f;
   box-shadow: 12px 12px 24px #0c0c0c, -12px -12px 24px #323232;
