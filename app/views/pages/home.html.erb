@@ -9,21 +9,20 @@
           <form novalidate="novalidate" class="simple_form search md-form active-purple active-purple-2 mb-3" action="/offers?city=Barcelona" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
             <div class="search-form-control form-group ">
               <%= form_tag offers_path, method: :get do %>
-                <%= text_field_tag :query,
-                  params[:query],
+              <%= text_field_tag :query,
+              params[:query],
                   #class: "form-control",
                   class: "form-control",
-                  placeholder: "Enter your city"
-                %>
-                <%= link_to "Explore", "/offers?query=#{params[:query]}", class: "btn button-offer"%>
+                    placeholder: "Enter your city"
+              %>
+              <%= link_to "Explore", "/offers?query=#{params[:query]}", class: "btn button-offer"%>
               <% end %>
-
             </div>
           </form>
         </p>
-        <div class="arrow bounce">
-          <a class="fa fa-chevron-down fa-2x" href="#"></a>
-        </div>
+              <div class="arrow bounce">
+                <a class="fa fa-chevron-down fa-2x" href="#"></a>
+              </div>
 
       </div>
   </section>
@@ -119,54 +118,89 @@
                   <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
                 <% elsif offer.start_time > DateTime.now  %>
                   <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
+                  <% end %>
+                </div>
+                <div class="card-desc">
+                  <h2><%=offer.description.truncate(15) %></h2>
+                  <p><%=offer.bar.name.truncate(10)%></p>
+                </div>
                 <% else %>
+                <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(0,0,0, 0.80), rgba(0,0,0, 0.80)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                   <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
-                <% end %>                <i class="far fa-heart"></i>
+                </div>
+                <div class="card-desc">
+                  <h2><%=offer.description.truncate(15) %></h2>
+                  <p><%=offer.bar.name.truncate(10)%></p>
+                </div>
+                <% end %>
+              <%end%>
+              <%end%>
+            </div>
+              <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>🔥 Most popular</strong></h2>
+              <div class="scrolling-wrapper new-listings my-4">
+                <% @most_populars.first(4).each do |offer|%>
+                  <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
+                    <% if offer.end_time > DateTime.now  %>
+                      <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+                      <% if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time %>
+                      <p class="badge-offer end-time-index countdown" data-end-time="<%= offer.end_time %>"></p>
+                      <% else offer.start_time > DateTime.now  %>
+                      <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
+                      <% end %>
+                    </div>
+                    <div class="card-desc">
+                      <h2><%=offer.description.truncate(15) %></h2>
+                      <p><%=offer.bar.name.truncate(10)%></p>
+                    </div>
+                    <% else %>
+                    <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(0,0,0, 0.80), rgba(0,0,0, 0.80)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+                      <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
+                    </div>
+                    <div class="card-desc">
+                      <h2><%=offer.description.truncate(15) %></h2>
+                      <p><%=offer.bar.name.truncate(10)%></p>
+                    </div>
+                    <% end %>
+                  <%end%>
+                <%end%>
               </div>
-              <div class="card-desc">
-                <h2><%=offer.description.truncate(15) %></h2>
-                <p><%=offer.bar.name.truncate(10)%></p>
+                <br>
+
+                <h1 class="title-new-listings container text-center" style="padding: 15px;"><strong>How it works</strong></h1>
+                <br>
+
+
+                <div class="toggler-section">
+
+                  <div class="mid">
+                    <div class="user-tab toggle-head opacity">
+                      For Users
+                    </div>
+
+                    <div class="toggle-button">
+                      <div class="ball">
+                        <div class="ball-logo">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="owner-tab toggle-head">
+                      For Bars
+                    </div>
+                  </div>
+                  <br>
+
+                  <div class="home-tab element left sides active">
+                    <%= render 'shared/user_how_it_works' %>
+                  </div>
+
+
+                  <div class="home-tab element right sides">
+                    <%= render 'shared/owner_how_it_works' %>
+                  </div>
+
+                </div>
+
+
               </div>
-        <%end%>
-      <%end%>
-    </div>
-    <br>
-
-  <h1 class="title-new-listings container text-center" style="padding: 15px;"><strong>How it works</strong></h1>
-  <br>
-
-
-  <div class="toggler-section">
-
-    <div class="mid">
-      <div class="user-tab toggle-head opacity">
-        For Users
-      </div>
-
-      <div class="toggle-button">
-        <div class="ball">
-          <div class="ball-logo">
-          </div>
-        </div>
-      </div>
-
-      <div class="owner-tab toggle-head">
-        For Bars
-      </div>
-    </div>
-    <br>
-
-    <div class="home-tab element left sides active">
-      <%= render 'shared/user_how_it_works' %>
-    </div>
-
-
-    <div class="home-tab element right sides">
-      <%= render 'shared/owner_how_it_works' %>
-    </div>
-
-  </div>
-
-
-  </div>
-</main>
+            </main>
