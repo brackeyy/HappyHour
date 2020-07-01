@@ -46,7 +46,7 @@
               </div>
               <% else %>
               <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(0,0,0, 0.80), rgba(0,0,0, 0.80)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                <p class="badge-expired end-time-index"> <strong> Offer expired. </strong></p>
+                <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
               </div>
               <div class="card-desc">
                 <h2><%=offer.description.truncate(15) %></h2>
@@ -67,7 +67,7 @@
                 <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
                 <% else %>
                   <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(0,0,0, 0.80), rgba(0,0,0, 0.80)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                  <p class="badge-expired end-time-index"> <strong> Offer expired. </strong></p>
+                  <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
                 <% end %>
               </div>
               <div class="card-desc">
@@ -88,7 +88,7 @@
                 <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
                 <% else %>
                   <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(0,0,0, 0.80), rgba(0,0,0, 0.80)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                  <p class="badge-expired end-time-index"> <strong> Offer expired. </strong></p>
+                  <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
                 <% end %>
               </div>
 
