@@ -23,11 +23,57 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
   border-bottom-color: #1f1f1f!important;
   border-top-color:  #1f1f1f!important;
+  border-right-color: #1f1f1f!important;
+  border-left-color: #1f1f1f!important;
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
   border-bottom-color: #1f1f1f!important;
   border-top-color:  #1f1f1f!important;
+  border-right-color: #1f1f1f!important;
+  border-left-color: #1f1f1f!important;
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-bottom-color: #1f1f1f!important;
+  border-top-color:  #1f1f1f!important;
+  border-right-color: #1f1f1f!important;
+  border-left-color: #1f1f1f!important;
+}
+
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
+  border-bottom-color: #1f1f1f!important;
+  border-top-color:  #1f1f1f!important;
+  border-right-color: #1f1f1f!important;
+  border-left-color: #1f1f1f!important;
+}
+
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-bottom-color: #1f1f1f!important;
+  border-top-color:  #1f1f1f!important;
+  border-right-color: #1f1f1f!important;
+  border-left-color: #1f1f1f!important;
+}
+
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+  border-bottom-color: #1f1f1f!important;
+  border-top-color:  #1f1f1f!important;
+  border-right-color: #1f1f1f!important;
+  border-left-color: #1f1f1f!important;
+}
+
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+  border-bottom-color: #1f1f1f!important;
+  border-top-color:  #1f1f1f!important;
+  border-right-color: #1f1f1f!important;
+  border-left-color: #1f1f1f!important;
+}
+
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip {
+  border-bottom-color: #1f1f1f!important;
+  border-top-color:  #1f1f1f!important;
+  border-right-color: #1f1f1f!important;
+  border-left-color: #1f1f1f!important;
 }
 
 .mapboxgl-ctrl-top-right {
@@ -77,7 +123,7 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
   opacity: 0.9;
 }
 
-#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+.map-show-page > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
   display:none;
 }
 
@@ -95,4 +141,8 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 
 #map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right {
   justify-content: end;
+}
+
+.ap-name {
+  color: #aaaaaa
 }
