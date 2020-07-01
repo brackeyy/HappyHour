@@ -1,13 +1,12 @@
 
-.carousel-inner {
-  // margin: 0 auto;
-  // object-fit: cover;
-}
-
-#countdown{
+.countdown{
   position: absolute;
   z-index:100;
-  font-size: 50px;
+  font-size: 14px;
+  &:before {
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f2f2";
+    margin-right: 5px;
+  }
 
 }
 .black-overlay{
