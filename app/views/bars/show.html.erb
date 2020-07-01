@@ -5,15 +5,8 @@
       <% @bar.photos.each_with_index do |photo, index| %>
         <div class="carousel-item <%= "active" if index == 0 %>">
           <%= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100 rounded gradient" %>
-          <% if @bar.offer.end_time > DateTime.now  %>
-            <% if @bar.offer.end_time > DateTime.now &&  DateTime.now > @bar.offer.start_time %>
-              <p class="badge-offer badge-offer-show end-time-index countdown"  data-end-time="<%= @bar.offer.end_time %>"></p>
-            <% else @bar.offer.start_time > DateTime.now  %>
-              <p class="badge-offer badge-offer-show end-time-index"> <strong> Offer did not start yet. </strong></p>
-            <% end %>
-          <% else %>
-            <p class="badge-expired badge-offer-show end-time-index"> <strong> Offer expired. </strong></p>
-          <% end %>
+
+
         </div>
       <%end%>
     </div>
