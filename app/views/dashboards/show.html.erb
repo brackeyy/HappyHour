@@ -2,9 +2,9 @@
 <div class="container">
   <% if current_user %>
 
-      <% if @sweetalert %>
-        <div class="sweetalert"></div>
-      <% end %>
+    <% if @sweetalert %>
+      <div class="sweetalert"></div>
+    <% end %>
 
     <% if current_user.owner %>
       <h1 class="text-center my-4"><strong>Want more?</strong></h1>
@@ -42,21 +42,21 @@
       <h3 class="text-center mt-5"><strong>Your bars</strong></h3>
       <br>
 
-      <div class ="row">
-        <%@bars.each do |bar|%>
-          <%=link_to bar_path(bar), class: "card-link col-12 col-md-6 col-lg-4 mt-4" do %>
-              <div class="card-offer">
-                <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path bar.photos.first.key, crop: :fill%>')">
-                </div>
-                <div class="card-desc">
-                  <div class="right">
-                    <p class="p-cards"><%= bar.name %></p>
-                  </div>
-                </div>
+  <div class ="row">
+    <%@bars.each do |bar|%>
+      <%=link_to bar_path(bar), class: "card-link col-12 col-md-6 col-lg-4 mt-4" do %>
+          <div class="card-offer">
+            <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path bar.photos.first.key, crop: :fill%>')">
+            </div>
+            <div class="card-desc">
+              <div class="right">
+                <p class="p-cards"><%= bar.name %></p>
               </div>
-          <%end%>
-        <%end%>
-      </div>
+            </div>
+          </div>
+      <%end%>
+    <%end%>
+  </div>
 
 
 
