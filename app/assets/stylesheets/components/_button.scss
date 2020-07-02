@@ -63,6 +63,7 @@ input.btn.button-offer {
   color: white;
   padding: 8px 24px;
   border: 1px solid white;
+  border-radius: 50px;
   font-weight: lighter;
   margin-top: 25px;
   transition: opacity 0.3s ease;
@@ -113,13 +114,37 @@ input.btn.button-offer {
   font-weight: lighter;
   margin-top: 15px;
   transition: opacity 0.3s ease;
-  width: 150px;
+  width: 160px;
   &:hover{
     opacity: 0.7;
     color: white;
   }
   &:before {
     font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f5a0";
+    margin-right: 8px;
+  }
+}
+.button-list {
+  background: $purple;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 1px solid #6c63ff;
+  background-color: #1f1f1f;
+  z-index: 1000;
+  right: 30%;
+  bottom: 12%;
+  position: fixed;
+  font-weight: lighter;
+  margin-top: 15px;
+  transition: opacity 0.3s ease;
+  width: 160px;
+  &:hover{
+    opacity: 0.7;
+    color: white;
+  }
+  &:before {
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f03a";
     margin-right: 8px;
   }
 }
