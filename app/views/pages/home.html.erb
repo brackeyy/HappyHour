@@ -21,13 +21,13 @@
           </form>
         </p>
               <div class="arrow bounce">
-                <a class="fa fa-chevron-down fa-2x" href="#"></a>
+                <a class="fa fa-chevron-down fa-2x" href="#currently-live"></a>
               </div>
 
       </div>
   </section>
 
-    <h2 class="title-new-listings text-center" style="padding:0px 15px;"><strong>⏰ Currently live</strong></h2>
+    <h2 class="title-new-listings" id="currently-live" style="padding:0px 15px;"><strong>⏰ Currently live</strong></h2>
     <div class="scrolling-wrapper new-listings my-4">
       <%@offers.each do |offer|%>
           <%if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time%>
@@ -59,7 +59,7 @@
       <%end%>
     </div>
 
-  <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>🕑 Starting soon</strong></h2>
+  <h2 class="title-new-listings" style="padding:0px 15px;"><strong>🕑 Starting soon</strong></h2>
     <div class="scrolling-wrapper new-listings my-4">
       <%@offers.select{|offer| (offer.start_time > DateTime.now) && (offer.start_time < DateTime.now + (1/24.0))}.each do |offer|%>
           <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
@@ -88,7 +88,7 @@
           <%end%>
       <%end%>
     </div>
-    <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>💃🏼 Staff picks</strong></h2>
+    <h2 class="title-new-listings" style="padding:0px 15px;"><strong>💃🏼 Staff picks</strong></h2>
     <div class="scrolling-wrapper new-listings my-4">
       <%@offers[2,5].each do |offer|%>
         <% if  offer.start_time > DateTime.now %>
@@ -111,8 +111,8 @@
       <% end %>
     </div>
 
-
-  <h2 class="title-new-listings container text-center" style="padding:0px 15px;"><strong>🔥 Most popular</strong></h2>
+ 
+  <h2 class="title-new-listings" style="padding:0px 15px;"><strong>🔥 Most popular</strong></h2>
   <div class="scrolling-wrapper new-listings my-4">
     <% @most_populars.first(4).each do |offer|%>
       <% if  offer.start_time > DateTime.now %>
@@ -144,7 +144,7 @@
   </div>
     <br>
 
-  <h1 class="title-new-listings container text-center" style="padding: 15px;"><strong>How it works</strong></h1>
+  <h1 class="title-new-listings text-center" style="padding: 15px;"><strong>How it works</strong></h1>
   <br>
 
 
