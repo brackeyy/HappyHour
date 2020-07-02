@@ -60,7 +60,7 @@
                     <% end %>
                   </div>
                 <div class="card-desc">
-                  <h2><%=offer.description.truncate(15) %></h2>
+                  <h2><i class="fas fa-tag"></i><%=offer.description.truncate(15) %></h2>
                   <p><%=offer.bar.name.truncate(10)%></p>
                 </div>
           <%end%>
@@ -81,7 +81,7 @@
               <% end %>
             </div>
             <div class="card-desc">
-              <h2><%=offer.description.truncate(15) %></h2>
+              <h2><i class="fas fa-tag"></i><%=offer.description.truncate(15) %></h2>
               <p><%=offer.bar.name.truncate(10)%></p>
             </div>
           <% end %>
@@ -89,7 +89,7 @@
       <% end %>
     </div>
 
- 
+
   <h2 class="title-new-listings" style="padding:0px 15px;"><strong>🔥 Most popular</strong></h2>
   <div class="scrolling-wrapper new-listings my-4">
     <% @most_populars.first(4).each do |offer|%>
@@ -104,7 +104,7 @@
             <% end %>
           </div>
           <div class="card-desc">
-            <h2><%=offer.description.truncate(15) %></h2>
+            <h2><i class="fas fa-tag"></i><%=offer.description.truncate(15) %></h2>
             <p><%=offer.bar.name.truncate(10)%></p>
           </div>
           <% else %>
@@ -112,7 +112,7 @@
             <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
           </div>
           <div class="card-desc">
-            <h2><%=offer.description.truncate(15) %></h2>
+            <h2><i class="fas fa-tag"></i><%=offer.description.truncate(15) %></h2>
             <p><%=offer.bar.name.truncate(10)%></p>
           </div>
           <% end %>
