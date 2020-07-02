@@ -1,13 +1,12 @@
-        <%=link_to offer_path(offer), class: "card-map" do %>
-            <div class="card-offer-map">
-              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                <p class="badge-offer end-time-index countdown" data-end-time="<%= offer.end_time %>"></p>
-              </div>
-              <div class="card-desc-map">
-                <h2><i class="fas fa-tag"></i> <%= offer.description %></h2>
-                <div class="right">
-                  <p class="p-cards">@ <%= offer.bar.name.truncate(10) %></p>
-                </div>
-              </div>
-            </div>
-        <%end%>
+<%=link_to offer_path(offer), class: "card-map" do %>
+  <div class="card-offer-map">
+    <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+    </div>
+    <div class="card-desc-map">
+      <h2><i class="fas fa-tag"></i> <%= offer.description %></h2>
+      <div class="right">
+        <p class="p-cards">@ <%= offer.bar.name.truncate(10) %></p>
+      </div>
+    </div>
+  </div>
+<%end%>

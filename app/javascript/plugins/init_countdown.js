@@ -1,6 +1,7 @@
 import  countdown  from 'countdown'
 const initCountdown = () => {
   const elements = document.querySelectorAll('.countdown')
+  console.log(elements)
   if (elements.length > 0) {
     elements.forEach((element) => {
       setInterval( () => {
