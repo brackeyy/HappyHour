@@ -13,6 +13,12 @@ a { color: white; text-decoration: none; }
   margin: 8% 0;
 }
 
+@media screen and (width: 375px) {
+  .arrow {
+    top: 580px;
+  }
+}
+
 @media screen and (min-width: 748px) {
   .arrow {
     bottom: -35%;
