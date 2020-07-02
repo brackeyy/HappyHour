@@ -31,13 +31,14 @@
 
 .toggler-section {
   width: 100%;
+  margin-bottom: 120px;
   .element {
     display: none;
     width: 100%;
-    &.left {
-      text-align: right;
-      margin-right: 2px;
-    }
+    // &.left {
+    //   text-align: right;
+    //   margin-right: 2px;
+    // }
     &.active {
       display: block;
     }
@@ -45,9 +46,9 @@
       opacity: 1;
       max-width: 80px;
     }
-    &.left {
-      margin-left: 2px;
-    }
+    // &.left {
+    //   margin-left: 2px;
+    // }
     .title {
       font-size: 0.5em;
       @include media-breakpoint-up(sm) {
