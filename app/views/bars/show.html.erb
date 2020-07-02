@@ -5,6 +5,7 @@
       <% @bar.photos.each_with_index do |photo, index| %>
         <div class="carousel-item <%= "active" if index == 0 %>">
           <%= cl_image_tag photo.key,  crop: :fill, class: "d-block w-100 rounded gradient" %>
+
         </div>
       <%end%>
     </div>
