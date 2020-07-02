@@ -9,12 +9,12 @@
     <div>
       <% if @offer.end_time > DateTime.now  %>
           <% if @offer.end_time > DateTime.now &&  DateTime.now > @offer.start_time %>
-            <p class="badge-offer badge-offer-show-book end-time-index countdown"  data-end-time="<%= @offer.end_time %>"></p>
+            <p class="badge-offer badge-offer-show-book end-time-index countdown pos-rel"  data-end-time="<%= @offer.end_time %>"></p>
           <% else @offer.start_time > DateTime.now  %>
-            <p class="badge-offer badge-offer-show-book end-time-index"> <strong> Offer did not start yet. </strong></p>
+            <p class="badge-offer badge-offer-show-book end-time-index pos-rel"> <strong> Offer did not start yet. </strong></p>
           <% end %>
       <% else %>
-            <p class="badge-expired badge-offer-show-book end-time-index"> <strong> Offer expired. </strong></p>
+            <p class="badge-expired badge-offer-show-book end-time-index pos-rel"> <strong> Offer expired. </strong></p>
       <% end %>
     </div>
 
@@ -23,7 +23,7 @@
     <h5 id='dist-container' ></h5>
     <br>
     <div id="map"
-      class="distance-calc"
+      class="distance-calc  map-show-page"
       style="width: 100%; height: 300px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
