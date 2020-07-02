@@ -12,6 +12,13 @@ a { color: white; text-decoration: none; }
   text-align: center;
   margin: 8% 0;
 }
+
+@media screen and (min-width: 748px) {
+  .arrow {
+    bottom: -35%;
+    right: 49%;
+  }
+}
 .bounce {
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;

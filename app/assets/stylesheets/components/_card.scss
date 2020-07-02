@@ -115,6 +115,7 @@
   border-radius: 50px;
   position: relative;
   align-items: baseline;
+  flex-direction: column;
 
 
   h2 {
@@ -158,7 +159,6 @@ p#countdown.end-time-index {
 .info-show {
   display: flex;
   flex-direction: column;
-  align-items: center;
   opacity: 0.7;
 }
 
@@ -249,3 +249,9 @@ p#countdown.end-time-index {
   background: #1f1f1f;
   box-shadow: 2px 2px 10px #141414, -5px -5px 20px #2a2a2a;
 }
+
+
+.active-sub {
+  border: 1px solid $purple;
+}
+
