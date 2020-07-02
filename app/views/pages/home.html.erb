@@ -91,52 +91,56 @@
     <h2 class="title-new-listings" style="padding:0px 15px;"><strong>💃🏼 Staff picks</strong></h2>
     <div class="scrolling-wrapper new-listings my-4">
       <%@offers[2,5].each do |offer|%>
-        <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
-              <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-                <% if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time %>
-                  <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
-                <% elsif offer.start_time > DateTime.now  %>
-                  <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
-                <% else %>
-                  <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
-                <% end %>
-              </div>
-              <div class="card-desc">
-                <h2><%=offer.description.truncate(15) %></h2>
-                <p><%=offer.bar.name.truncate(10)%></p>
-              </div>
-        <%end%>
-      <%end%>
+        <% if  offer.start_time > DateTime.now %>
+          <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
+            <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+              <% if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time %>
+                <p class="badge-offer end-time-index" id="countdown" data-end-time="<%= offer.end_time %>"></p>
+              <% elsif offer.start_time > DateTime.now  %>
+                <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
+              <% else %>
+                <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
+              <% end %>
+            </div>
+            <div class="card-desc">
+              <h2><%=offer.description.truncate(15) %></h2>
+              <p><%=offer.bar.name.truncate(10)%></p>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
 
-   
+ 
   <h2 class="title-new-listings" style="padding:0px 15px;"><strong>🔥 Most popular</strong></h2>
   <div class="scrolling-wrapper new-listings my-4">
     <% @most_populars.first(4).each do |offer|%>
-      <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
-        <% if offer.end_time > DateTime.now  %>
-          <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-          <% if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time %>
-          <p class="badge-offer end-time-index countdown" data-end-time="<%= offer.end_time %>"></p>
-          <% else offer.start_time > DateTime.now  %>
-          <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
+      <% if  offer.start_time > DateTime.now %>
+        <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
+          <% if offer.end_time > DateTime.now  %>
+            <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+            <% if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time %>
+            <p class="badge-offer end-time-index countdown" data-end-time="<%= offer.end_time %>"></p>
+            <% else offer.start_time > DateTime.now  %>
+            <p class="badge-offer end-time-index"> <strong> Offer did not start yet. </strong></p>
+            <% end %>
+          </div>
+          <div class="card-desc">
+            <h2><%=offer.description.truncate(15) %></h2>
+            <p><%=offer.bar.name.truncate(10)%></p>
+          </div>
+          <% else %>
+          <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(0,0,0, 0.80), rgba(0,0,0, 0.80)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
+            <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
+          </div>
+          <div class="card-desc">
+            <h2><%=offer.description.truncate(15) %></h2>
+            <p><%=offer.bar.name.truncate(10)%></p>
+          </div>
           <% end %>
-        </div>
-        <div class="card-desc">
-          <h2><%=offer.description.truncate(15) %></h2>
-          <p><%=offer.bar.name.truncate(10)%></p>
-        </div>
-        <% else %>
-        <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(0,0,0, 0.80), rgba(0,0,0, 0.80)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
-          <p class="badge-offer end-time-index"> <strong> Offer expired. </strong></p>
-        </div>
-        <div class="card-desc">
-          <h2><%=offer.description.truncate(15) %></h2>
-          <p><%=offer.bar.name.truncate(10)%></p>
-        </div>
-        <% end %>
+        <%end%>
       <%end%>
-    <%end%>
+    <% end %>
   </div>
     <br>
 
