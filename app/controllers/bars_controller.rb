@@ -6,13 +6,11 @@ before_action :find_bar, only: [:show, :edit, :update, :destroy]
 
 
 def show
-
   @markers =
     [{
       lat: @bar.latitude,
       lng: @bar.longitude
     }]
-
 end
 
   def new
