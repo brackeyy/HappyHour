@@ -22,11 +22,18 @@ const addMarkersToMap = (map, markers) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
     const element = document.createElement('div');
-  element.className = 'marker';
-  element.style.backgroundImage = `url('${marker.image_url}')`;
-  element.style.backgroundSize = 'cover';
-  element.style.width = '26px';
-  element.style.height = '37px';
+    const clock = document.createElement('div');
+    clock.classList.add('countdown');
+    clock.classList.add('countdown-map')
+    element.className = 'marker';
+    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundSize = 'cover';
+    element.style.width = '26px';
+    element.style.height = '37px';
+    element.appendChild(clock);
+    console.log(marker);
+    clock.setAttribute('data-end-time', marker.end_time)
+
 
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
