@@ -2,7 +2,13 @@
       <h2>Checkout summary</h2>
       <br>
       <div class="card-offer card-subscription">
-        <div class="circle-silver"></div>
+          <% if @premium == 1 %>
+            <div class="circle-white"></div>
+          <% elsif @premium == 2 %>
+            <div class="circle-silver"></div>
+           <% else %>
+            <div class="circle-gold"></div>
+           <% end %>
           <% if @premium == 1 %>
             <h4><%= @subscriptions[0].name %></h4>
             <p><%=@subscriptions[0].description%></p>
