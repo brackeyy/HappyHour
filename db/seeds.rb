@@ -17,7 +17,7 @@ User.destroy_all
 
 
 
-puts "Creating users.."
+puts "Creating users..."
 
 user1 = User.create(email: "come@gmail.com", password: "123456", password_confirmation: "123456", owner: true, premium: 1)
 user2 = User.create(email: "simon@gmail.com", password: "123456", password_confirmation: "123456", owner: true, premium: 1)
@@ -26,16 +26,14 @@ user4 = User.create(email: "nik@gmail.com", password: "123456", password_confirm
 
 
 puts "Users created."
-
-
-puts "Creating subscriptions"
+puts "Creating subscriptions..."
 
 subscription1 = Subscription.create!(name: 'Free', premium: 1, description: 'Our free plan allows you to publish up to 3 offers a week', price: 0)
 subscription2 = Subscription.create!(name: 'Silver', premium: 2, description: 'Our silver plan allows you to publish up to 5 offers a week', price: 50)
 subscription3 = Subscription.create!(name: 'Gold', premium: 3, description: 'Our Gold plan allows you to publish as many offers as you wish!', price: 70)
 
 puts "Subscriptions created"
-puts "Creating bars.."
+puts "Creating bars..."
 
 # template
 # file1 = URI.open('https://images.pexels.com/photos/2459/stairs-home-loft-lifestyle.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500')
@@ -89,21 +87,21 @@ bar8.photos.attach(io: file8, filename: 'bar8.png', content_type: 'image/png')
 bar8.save!
 
 puts "Flats created."
-puts "Creating offers.."#
+puts "Creating offers..."#
 
 
-offer1 = Offer.create!(bar: bar1, description: "Beer 2 for 1", start_time: DateTime.new(2020,07,03,12), end_time: DateTime.new(2020,07,03,17))
-offer2 = Offer.create!(bar: bar2, description: "Shots free", start_time: DateTime.new(2020,07,03,12), end_time: DateTime.new(2020,07,03,17))
-offer3 = Offer.create!(bar: bar3, description: "Lady's Drink for free", start_time: DateTime.new(2020,07,03,12), end_time: DateTime.new(2020,07,03,18))
-offer4 = Offer.create!(bar: bar4, description: "Beer 3 for 1", start_time: DateTime.new(2020,07,03,13), end_time: DateTime.new(2020,07,03,18))
-offer5 = Offer.create!(bar: bar5, description: "Vodka Bull 50% off", start_time: DateTime.new(2020,07,03,14), end_time: DateTime.new(2020,07,03,19))
-offer6 = Offer.create!(bar: bar6, description: "Milk 2 for 1", start_time: DateTime.new(2020,07,03,15), end_time: DateTime.new(2020,07,03,20))
-offer7 = Offer.create!(bar: bar7, description: "Free beer", start_time: DateTime.new(2020,07,03,16), end_time: DateTime.new(2020,07,03,20))
-offer8 = Offer.create!(bar: bar8, description: "Wet T-shirt contest + free beer", start_time: DateTime.new(2020,07,03,16), end_time: DateTime.new(2020,07,03,20))
+offer1 = Offer.create!(bar: bar1, description: "Beer 2 for 1", start_time: DateTime.new(2020,07,03,16), end_time: DateTime.new(2020,07,03,22))
+offer2 = Offer.create!(bar: bar2, description: "Shots free", start_time: DateTime.new(2020,07,03,16), end_time: DateTime.new(2020,07,03,22))
+offer3 = Offer.create!(bar: bar3, description: "Lady's Drink for free", start_time: DateTime.new(2020,07,03,16), end_time: DateTime.new(2020,07,03,22))
+offer4 = Offer.create!(bar: bar4, description: "Beer 3 for 1", start_time: DateTime.new(2020,07,03,18), end_time: DateTime.new(2020,07,03,24))
+offer5 = Offer.create!(bar: bar5, description: "Vodka Bull 50% off", start_time: DateTime.new(2020,07,03,18), end_time: DateTime.new(2020,07,03,24))
+offer6 = Offer.create!(bar: bar6, description: "Milk 2 for 1", start_time: DateTime.new(2020,07,03,18), end_time: DateTime.new(2020,07,03,24))
+offer7 = Offer.create!(bar: bar7, description: "Free beer", start_time: DateTime.new(2020,07,03,18), end_time: DateTime.new(2020,07,03,24))
+offer8 = Offer.create!(bar: bar8, description: "Wet T-shirt contest + free beer", start_time: DateTime.new(2020,07,03,18), end_time: DateTime.new(2020,07,03,24))
 
 
 puts "Offers created."
-puts "Creating Bookings.."
+puts "Creating Bookings..."
 #Bookings
 booking1 = Booking.create!(user: user1, offer: offer6)
 booking2 = Booking.create!(user: user2, offer: offer7)
