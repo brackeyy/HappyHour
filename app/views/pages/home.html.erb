@@ -30,7 +30,7 @@
     <h2 class="title-new-listings" id="currently-live" style="padding:0px 15px;"><strong>⏰ Currently live</strong></h2>
     <div class="scrolling-wrapper new-listings my-4">
       <%@offers.each do |offer|%>
-          <%if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time%>
+          <%if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time %>
             <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
             <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                 <p class="badge-offer end-time-index countdown" data-end-time="<%= offer.end_time %>"></p>
