@@ -91,13 +91,13 @@ puts "Creating offers..."#
 
 
 offer1 = Offer.create!(bar: bar1, description: "Beer 2 for 1", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 16), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 18))
-offer2 = Offer.create!(bar: bar2, description: "Shots free", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 16), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 18))
-offer3 = Offer.create!(bar: bar3, description: "Lady's Drink for free", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 16), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 18))
-offer4 = Offer.create!(bar: bar4, description: "Beer 3 for 1", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 16), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 18))
-offer5 = Offer.create!(bar: bar5, description: "Vodka Bull 50% off", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 16), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 18))
-offer6 = Offer.create!(bar: bar6, description: "Milk 2 for 1", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 16), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 18))
-offer7 = Offer.create!(bar: bar7, description: "Free beer", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 16), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 18))
-offer8 = Offer.create!(bar: bar8, description: "Wet T-shirt contest + free beer", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 16), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 18))
+offer2 = Offer.create!(bar: bar2, description: "Shots free", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 17), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 19))
+offer3 = Offer.create!(bar: bar3, description: "Lady's Drink for free", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 18), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 20))
+offer4 = Offer.create!(bar: bar4, description: "Beer 3 for 1", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 19), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 21))
+offer5 = Offer.create!(bar: bar5, description: "Vodka Bull 50% off", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 20), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 22))
+offer6 = Offer.create!(bar: bar6, description: "Milk 2 for 1", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 21), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 23))
+offer7 = Offer.create!(bar: bar7, description: "Free beer", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 22), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 24))
+offer8 = Offer.create!(bar: bar8, description: "Wet T-shirt contest + free beer", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 23), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 24))
 
 
 puts "Offers created."
