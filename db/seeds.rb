@@ -90,7 +90,7 @@ puts "Flats created."
 puts "Creating offers..."#
 
 
-offer1 = Offer.create!(bar: bar1, description: "Beer 2 for 1", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 19), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 20))
+offer1 = Offer.create!(bar: bar1, description: "Beer 2 for 1", start_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 19,0,0, '+0200'), end_time: DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, 20,0,0, '+0200'))
 offer2 = Offer.create!(bar: bar2, description: "Shots free", start_time: DateTime.new(2020,07,03,16), end_time: DateTime.new(2020,07,03,22))
 offer3 = Offer.create!(bar: bar3, description: "Lady's Drink for free", start_time: DateTime.new(2020,07,03,16), end_time: DateTime.new(2020,07,03,22))
 offer4 = Offer.create!(bar: bar4, description: "Beer 3 for 1", start_time: DateTime.new(2020,07,03,18), end_time: DateTime.new(2020,07,03,24))
