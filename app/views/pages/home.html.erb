@@ -50,7 +50,7 @@
 
   <h2 class="title-new-listings" style="padding:0px 15px;"><strong>🕑 Starting soon</strong></h2>
     <div class="scrolling-wrapper new-listings my-4">
-      <%@offers.select{|offer| (offer.start_time > DateTime.now) && (offer.start_time < DateTime.now + (3/24.0))}.each do |offer|%>
+      <%@offers.select{|offer| (offer.start_time > DateTime.now) && (offer.start_time < DateTime.now + 1.hour}.each do |offer|%>
           <%=link_to offer_path(offer), class: "card-link card-offer col-12 mt-4" do %>
                   <div class="card-image-category" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.20)), url('<%= cl_image_path offer.bar.photos.first.key, crop: :fill%>')">
                     <% if offer.end_time > DateTime.now &&  DateTime.now > offer.start_time %>
